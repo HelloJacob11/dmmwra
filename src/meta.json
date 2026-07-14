@@ -1,5 +1,6 @@
 {
   "n_records": 405,
+  "citywide_note": "Citywide CSO outfall totals are not affected by demographic filters.",
   "filters": [
     {
       "field": "cov_zip_code",
@@ -53,7 +54,7 @@
     },
     {
       "field": "cov_years_at_zip",
-      "label": "Years at zip",
+      "label": "Length of Residence",
       "type": "categorical",
       "options": [
         {
@@ -134,7 +135,7 @@
     },
     {
       "field": "cov_race",
-      "label": "Race",
+      "label": "Race / Ethnicity",
       "type": "categorical",
       "options": [
         {
@@ -165,7 +166,7 @@
     },
     {
       "field": "cov_education",
-      "label": "Education",
+      "label": "Education Level",
       "type": "categorical",
       "options": [
         {
@@ -204,7 +205,7 @@
     },
     {
       "field": "cov_household_income",
-      "label": "Household income",
+      "label": "Income",
       "type": "categorical",
       "options": [
         {
@@ -251,7 +252,7 @@
     },
     {
       "field": "cov_home_ownership",
-      "label": "Home ownership",
+      "label": "Home Ownership",
       "type": "categorical",
       "options": [
         {
@@ -269,6 +270,1173 @@
         {
           "value": 4,
           "label": "No payment"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "flooding",
+      "title": "Precipitation & Flooding",
+      "survey_part": "Part 1",
+      "blurb": "How residents experience rainfall, flooding, and extreme precipitation.",
+      "index": {
+        "field": "flood_exposure_index",
+        "label": "Flood Exposure Index",
+        "kind": "index",
+        "chart": "distribution",
+        "note": "Standardized factor score (higher = more of the construct)."
+      },
+      "questions": [
+        {
+          "field": "fcc_yard_flood_freq",
+          "label": "Yard flooding frequency",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 0,
+              "label": "Never or almost never"
+            },
+            {
+              "value": 1,
+              "label": "Rarely (once a year or less)"
+            },
+            {
+              "value": 2,
+              "label": "Sometimes (once every 2-6 months)"
+            },
+            {
+              "value": 3,
+              "label": "Often (about once a month)"
+            },
+            {
+              "value": 4,
+              "label": "Always (every time it rains)"
+            }
+          ]
+        },
+        {
+          "field": "fcc_street_flood_freq",
+          "label": "Street flooding frequency",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 0,
+              "label": "Never or almost never"
+            },
+            {
+              "value": 1,
+              "label": "Rarely (once a year or less)"
+            },
+            {
+              "value": 2,
+              "label": "Sometimes (once every 2-6 months)"
+            },
+            {
+              "value": 3,
+              "label": "Often (about once a month)"
+            },
+            {
+              "value": 4,
+              "label": "Always (every time it rains)"
+            }
+          ]
+        },
+        {
+          "field": "fcc_flood_cause_primary",
+          "label": "Primary perceived cause of flooding",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Aging infrastructure"
+            },
+            {
+              "value": 2,
+              "label": "Blocked drainage"
+            },
+            {
+              "value": 3,
+              "label": "Heavy rainfall"
+            },
+            {
+              "value": 4,
+              "label": "Increased urban development"
+            },
+            {
+              "value": 5,
+              "label": "Nearby creek/river overflowing"
+            },
+            {
+              "value": 6,
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "field": "fcc_rainfall_qol_impact",
+          "label": "How flooding has affected quality of life",
+          "kind": "multiselect",
+          "chart": "bar_multiselect",
+          "members": [
+            {
+              "field": "fcc_rainfall_qol_impact_1",
+              "label": "Property damage"
+            },
+            {
+              "field": "fcc_rainfall_qol_impact_2",
+              "label": "Loss of work or income"
+            },
+            {
+              "field": "fcc_rainfall_qol_impact_3",
+              "label": "Prevented or delayed access to essential services"
+            },
+            {
+              "field": "fcc_rainfall_qol_impact_4",
+              "label": "Mental health impact"
+            },
+            {
+              "field": "fcc_rainfall_qol_impact_5",
+              "label": "Displacement from home"
+            },
+            {
+              "field": "fcc_rainfall_qol_impact_6",
+              "label": "Interruption of utility services"
+            },
+            {
+              "field": "fcc_rainfall_qol_impact_7",
+              "label": "Increased expenditure on floodproofing or repairs"
+            },
+            {
+              "field": "fcc_rainfall_qol_impact_8",
+              "label": "Increased insurance premiums"
+            }
+          ]
+        },
+        {
+          "field": "fcc_extreme_precip_increase",
+          "label": "Noticed increase in extreme precipitation",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "fcc_extreme_precip_duration",
+          "label": "Noticed longer-lasting rainfall",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "fcc_extreme_precip_type",
+          "label": "Types of extreme precipitation observed",
+          "kind": "multiselect",
+          "chart": "bar_multiselect",
+          "members": [
+            {
+              "field": "fcc_extreme_precip_type_1",
+              "label": "Rain"
+            },
+            {
+              "field": "fcc_extreme_precip_type_2",
+              "label": "Snow"
+            },
+            {
+              "field": "fcc_extreme_precip_type_3",
+              "label": "Hail"
+            },
+            {
+              "field": "fcc_extreme_precip_type_4",
+              "label": "Sleet"
+            }
+          ]
+        },
+        {
+          "field": "fcc_seasonal_unpredictability",
+          "label": "Seasonal precipitation feels unpredictable",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        },
+        {
+          "field": "fcc_climate_change_concern",
+          "label": "Concerned climate change drives unpredictability",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sewer",
+      "title": "Sewer System Knowledge",
+      "survey_part": "Part 2",
+      "blurb": "Awareness of the sewer system, overflow events, and the Ingersoll separation project.",
+      "index": {
+        "field": "awareness_index",
+        "label": "Sewer Awareness Index",
+        "kind": "index",
+        "chart": "distribution",
+        "note": "Standardized factor score (higher = more of the construct)."
+      },
+      "questions": [
+        {
+          "field": "iu_sewer_type_knowledge",
+          "label": "Believed sewer system type in Des Moines",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 0,
+              "label": "Don't know"
+            },
+            {
+              "value": 1,
+              "label": "Not aware (Separate)"
+            },
+            {
+              "value": 2,
+              "label": "Aware (Separate)"
+            }
+          ]
+        },
+        {
+          "field": "iu_sewer_knowledge_known",
+          "label": "Knows the sewer system type",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "iu_stormwater_outlet_seen",
+          "label": "Has seen a stormwater outlet locally",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "iu_sewer_overflow_affected",
+          "label": "Overflow event affected household/community",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "nc_sewer_info_access",
+          "label": "Knows how to access sewer info",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "nc_sewer_info_confidence",
+          "label": "Confidence that sewer info is up to date",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "No confidence at all"
+            },
+            {
+              "value": 2,
+              "label": "Low confidence"
+            },
+            {
+              "value": 3,
+              "label": "Neutral"
+            },
+            {
+              "value": 4,
+              "label": "Some confidence"
+            },
+            {
+              "value": 5,
+              "label": "High confidence"
+            }
+          ]
+        },
+        {
+          "field": "nc_sewer_issue_comm_confidence",
+          "label": "Confidence they'd be told of a sewer issue in time",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "No confidence at all"
+            },
+            {
+              "value": 2,
+              "label": "Low confidence"
+            },
+            {
+              "value": 3,
+              "label": "Neutral"
+            },
+            {
+              "value": 4,
+              "label": "Some confidence"
+            },
+            {
+              "value": 5,
+              "label": "High confidence"
+            }
+          ]
+        },
+        {
+          "field": "nc_sewer_info_source",
+          "label": "Where residents get sewer information",
+          "kind": "multiselect",
+          "chart": "bar_multiselect",
+          "members": [
+            {
+              "field": "nc_sewer_info_source_1",
+              "label": "City of Des Moines website"
+            },
+            {
+              "field": "nc_sewer_info_source_2",
+              "label": "DMMWRA website"
+            },
+            {
+              "field": "nc_sewer_info_source_3",
+              "label": "Text/email notifications from city"
+            },
+            {
+              "field": "nc_sewer_info_source_4",
+              "label": "Local news sources"
+            },
+            {
+              "field": "nc_sewer_info_source_5",
+              "label": "Social media"
+            },
+            {
+              "field": "nc_sewer_info_source_6",
+              "label": "Neighborhood/community groups"
+            },
+            {
+              "field": "nc_sewer_info_source_7",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "field": "nc_ingersoll_aware",
+          "label": "Aware of the Ingersoll project",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "nc_ingersoll_comm_satisfaction",
+          "label": "Satisfaction with Ingersoll communication",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Very dissatisfied"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat dissatisfied"
+            },
+            {
+              "value": 3,
+              "label": "Neither satisfied nor dissatisfied"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat satisfied"
+            },
+            {
+              "value": 5,
+              "label": "Very satisfied"
+            }
+          ]
+        },
+        {
+          "field": "iu_ingersoll_serves_household",
+          "label": "Confidence Ingersoll serves their household",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Not confident at all"
+            },
+            {
+              "value": 2,
+              "label": "Minimally confident"
+            },
+            {
+              "value": 3,
+              "label": "Neutral"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat confident"
+            },
+            {
+              "value": 5,
+              "label": "Highly confident"
+            }
+          ]
+        },
+        {
+          "field": "iu_ingersoll_serves_community",
+          "label": "Confidence Ingersoll serves their community",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Not confident at all"
+            },
+            {
+              "value": 2,
+              "label": "Minimally confident"
+            },
+            {
+              "value": 3,
+              "label": "Neutral"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat confident"
+            },
+            {
+              "value": 5,
+              "label": "Highly confident"
+            }
+          ]
+        },
+        {
+          "field": "iu_neighborhood_priority",
+          "label": "Felt their neighborhood was a priority",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Definitely not"
+            },
+            {
+              "value": 2,
+              "label": "Probably not"
+            },
+            {
+              "value": 3,
+              "label": "Neutral"
+            },
+            {
+              "value": 4,
+              "label": "Probably yes"
+            },
+            {
+              "value": 5,
+              "label": "Definitely yes"
+            }
+          ]
+        },
+        {
+          "field": "nc_overflow_noti_pre_ingersoll",
+          "label": "Notified of overflows before Ingersoll",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 0,
+              "label": "Don't know"
+            },
+            {
+              "value": 1,
+              "label": "No"
+            },
+            {
+              "value": 2,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "nc_longterm_separation_aware",
+          "label": "Aware of the long-term separation project",
+          "kind": "single",
+          "chart": "binary",
+          "options": [
+            {
+              "value": 0,
+              "label": "No"
+            },
+            {
+              "value": 1,
+              "label": "Yes"
+            }
+          ]
+        },
+        {
+          "field": "nc_preferred_comm_channel",
+          "label": "Preferred channel for infrastructure updates",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Local TV news"
+            },
+            {
+              "value": 2,
+              "label": "City website"
+            },
+            {
+              "value": 3,
+              "label": "Social media"
+            },
+            {
+              "value": 4,
+              "label": "Public radio"
+            },
+            {
+              "value": 5,
+              "label": "Neighborhood flyer"
+            },
+            {
+              "value": 6,
+              "label": "Neighborhood text/email chain"
+            },
+            {
+              "value": 7,
+              "label": "Other"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "government",
+      "title": "Local Government",
+      "survey_part": "Part 3",
+      "blurb": "Trust in local government's handling of stormwater and sewer infrastructure.",
+      "indices": [
+        {
+          "field": "institutional_trust_gov",
+          "label": "Trust in Government",
+          "kind": "index",
+          "chart": "distribution",
+          "note": "Standardized factor score (higher = more of the construct)."
+        },
+        {
+          "field": "institutional_trust_project",
+          "label": "Trust in the Project",
+          "kind": "index",
+          "chart": "distribution",
+          "note": "Standardized factor score (higher = more of the construct)."
+        },
+        {
+          "field": "institutional_trust_comm",
+          "label": "Trust in Communication",
+          "kind": "index",
+          "chart": "distribution",
+          "note": "Standardized factor score (higher = more of the construct)."
+        }
+      ],
+      "questions": [
+        {
+          "field": "iu_gov_investment_confidence",
+          "label": "Gov invests in meaningful infrastructure",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        },
+        {
+          "field": "iu_gov_community_collab",
+          "label": "Gov works with community groups",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        },
+        {
+          "field": "iu_gov_listens_to_residents",
+          "label": "Officials listen to residents' experiences",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        },
+        {
+          "field": "iu_gov_fixes_neglected",
+          "label": "City fixes long-neglected neighborhoods",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        },
+        {
+          "field": "nc_gov_contact_knowledge",
+          "label": "Would know who to contact about sewer issues",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tapwater",
+      "title": "Tap Water",
+      "survey_part": "Part 4",
+      "blurb": "Perceptions of home tap water safety, quality, and protective behaviors.",
+      "indices": [
+        {
+          "field": "water_trust_sensory",
+          "label": "Sensory Water Trust",
+          "kind": "index",
+          "chart": "distribution",
+          "note": "Standardized factor score (higher = more of the construct)."
+        },
+        {
+          "field": "water_trust_behavioral",
+          "label": "Behavioral Water Trust",
+          "kind": "index",
+          "chart": "distribution",
+          "note": "Standardized factor score (higher = more of the construct)."
+        }
+      ],
+      "questions": [
+        {
+          "field": "twt_tp_safe_belief",
+          "label": "Believes home tap water is safe",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
+        },
+        {
+          "field": "twt_tp_taste",
+          "label": "Acceptability of taste",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Not acceptable"
+            },
+            {
+              "value": 2,
+              "label": "Slightly acceptable"
+            },
+            {
+              "value": 3,
+              "label": "Moderately acceptable"
+            },
+            {
+              "value": 4,
+              "label": "Very acceptable"
+            },
+            {
+              "value": 5,
+              "label": "Extremely acceptable"
+            }
+          ]
+        },
+        {
+          "field": "twt_tp_appearance",
+          "label": "Acceptability of appearance",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Not acceptable"
+            },
+            {
+              "value": 2,
+              "label": "Slightly acceptable"
+            },
+            {
+              "value": 3,
+              "label": "Moderately acceptable"
+            },
+            {
+              "value": 4,
+              "label": "Very acceptable"
+            },
+            {
+              "value": 5,
+              "label": "Extremely acceptable"
+            }
+          ]
+        },
+        {
+          "field": "twt_tp_smell",
+          "label": "Acceptability of smell",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Not acceptable"
+            },
+            {
+              "value": 2,
+              "label": "Slightly acceptable"
+            },
+            {
+              "value": 3,
+              "label": "Moderately acceptable"
+            },
+            {
+              "value": 4,
+              "label": "Very acceptable"
+            },
+            {
+              "value": 5,
+              "label": "Extremely acceptable"
+            }
+          ]
+        },
+        {
+          "field": "twt_bw_spend",
+          "label": "Weekly bottled-water spending",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 0,
+              "label": "$41+"
+            },
+            {
+              "value": 1,
+              "label": "$26-40"
+            },
+            {
+              "value": 2,
+              "label": "$11-25"
+            },
+            {
+              "value": 3,
+              "label": "$6-10"
+            },
+            {
+              "value": 4,
+              "label": "$1-5"
+            },
+            {
+              "value": 5,
+              "label": "$0"
+            }
+          ]
+        },
+        {
+          "field": "twt_tp_quality_seasonal",
+          "label": "Believes tap quality varies by season",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 0,
+              "label": "Yes (reversed)"
+            },
+            {
+              "value": 1,
+              "label": "No (reversed)"
+            }
+          ]
+        },
+        {
+          "field": "twt_tp_quality_weather",
+          "label": "Weather events thought to affect tap quality",
+          "kind": "multiselect",
+          "chart": "bar_multiselect",
+          "members": [
+            {
+              "field": "twt_tp_quality_weather_1",
+              "label": "Snow"
+            },
+            {
+              "field": "twt_tp_quality_weather_2",
+              "label": "Rain"
+            },
+            {
+              "field": "twt_tp_quality_weather_3",
+              "label": "Drought"
+            },
+            {
+              "field": "twt_tp_quality_weather_4",
+              "label": "Flood"
+            }
+          ]
+        },
+        {
+          "field": "twt_filter",
+          "label": "Filters used in the home",
+          "kind": "multiselect",
+          "chart": "bar_multiselect",
+          "members": [
+            {
+              "field": "twt_filter_1",
+              "label": "Kitchen tap"
+            },
+            {
+              "field": "twt_filter_2",
+              "label": "Shower"
+            },
+            {
+              "field": "twt_filter_3",
+              "label": "Refrigerator"
+            },
+            {
+              "field": "twt_filter_4",
+              "label": "Dishwasher"
+            },
+            {
+              "field": "twt_filter_5",
+              "label": "Washing machine"
+            },
+            {
+              "field": "twt_filter_6",
+              "label": "Full-home filter system"
+            },
+            {
+              "field": "twt_filter_7",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "field": "twt_contaminant",
+          "label": "Contaminants residents are concerned about",
+          "kind": "multiselect",
+          "chart": "bar_multiselect",
+          "members": [
+            {
+              "field": "twt_contaminant_1",
+              "label": "Microplastics"
+            },
+            {
+              "field": "twt_contaminant_2",
+              "label": "Lead"
+            },
+            {
+              "field": "twt_contaminant_3",
+              "label": "Radon"
+            },
+            {
+              "field": "twt_contaminant_4",
+              "label": "Arsenic"
+            },
+            {
+              "field": "twt_contaminant_5",
+              "label": "PFAS"
+            },
+            {
+              "field": "twt_contaminant_6",
+              "label": "Nitrate"
+            },
+            {
+              "field": "twt_contaminant_7",
+              "label": "Pesticides and agricultural byproducts"
+            },
+            {
+              "field": "twt_contaminant_8",
+              "label": "Pharmaceuticals and PCPs"
+            },
+            {
+              "field": "twt_contaminant_9",
+              "label": "Disinfection byproducts (DBPs)"
+            },
+            {
+              "field": "twt_contaminant_10",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "field": "twt_bw_label_check",
+          "label": "Checks bottled-water labels",
+          "kind": "single",
+          "chart": "bar",
+          "options": [
+            {
+              "value": 1,
+              "label": "Always"
+            },
+            {
+              "value": 2,
+              "label": "Most of the time"
+            },
+            {
+              "value": 3,
+              "label": "About half the time"
+            },
+            {
+              "value": 4,
+              "label": "Rarely"
+            },
+            {
+              "value": 5,
+              "label": "Never or almost never"
+            }
+          ]
+        },
+        {
+          "field": "nc_tap_concern_contact",
+          "label": "Could find someone to discuss tap-water concerns",
+          "kind": "single",
+          "chart": "likert",
+          "options": [
+            {
+              "value": 1,
+              "label": "Strongly disagree"
+            },
+            {
+              "value": 2,
+              "label": "Somewhat disagree"
+            },
+            {
+              "value": 3,
+              "label": "Neither agree nor disagree"
+            },
+            {
+              "value": 4,
+              "label": "Somewhat agree"
+            },
+            {
+              "value": 5,
+              "label": "Strongly agree"
+            }
+          ]
         }
       ]
     }
