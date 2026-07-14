@@ -1,0 +1,276 @@
+{
+  "n_records": 405,
+  "filters": [
+    {
+      "field": "cov_zip_code",
+      "label": "Zip Code",
+      "type": "categorical",
+      "options": [
+        "50003",
+        "50021",
+        "50023",
+        "50036",
+        "50124",
+        "50125",
+        "50131",
+        "50158",
+        "50201",
+        "50208",
+        "50211",
+        "50248",
+        "50263",
+        "50265",
+        "50266",
+        "50301",
+        "50302",
+        "50304",
+        "50309",
+        "50310",
+        "50311",
+        "50312",
+        "50313",
+        "50314",
+        "50315",
+        "50316",
+        "50317",
+        "50319",
+        "50320",
+        "50321",
+        "50322",
+        "50323",
+        "50324",
+        "50325",
+        "50326",
+        "50327",
+        "50501",
+        "50533",
+        "50801",
+        "50940",
+        "51314",
+        "51401",
+        "60315"
+      ]
+    },
+    {
+      "field": "cov_years_at_zip",
+      "label": "Years at zip",
+      "type": "categorical",
+      "options": [
+        {
+          "value": 1,
+          "label": "Less than a year"
+        },
+        {
+          "value": 2,
+          "label": "1-5 years"
+        },
+        {
+          "value": 3,
+          "label": "6-10 years"
+        },
+        {
+          "value": 4,
+          "label": "11-20 years"
+        },
+        {
+          "value": 5,
+          "label": "Over 20 years"
+        }
+      ]
+    },
+    {
+      "field": "cov_age",
+      "label": "Age",
+      "type": "categorical",
+      "options": [
+        {
+          "value": 1,
+          "label": "18-24"
+        },
+        {
+          "value": 2,
+          "label": "25-34"
+        },
+        {
+          "value": 3,
+          "label": "35-44"
+        },
+        {
+          "value": 4,
+          "label": "45-54"
+        },
+        {
+          "value": 5,
+          "label": "55-64"
+        },
+        {
+          "value": 6,
+          "label": "65+"
+        }
+      ]
+    },
+    {
+      "field": "cov_gender",
+      "label": "Gender",
+      "type": "categorical",
+      "options": [
+        {
+          "value": 1,
+          "label": "Female"
+        },
+        {
+          "value": 2,
+          "label": "Male"
+        },
+        {
+          "value": 3,
+          "label": "Non-binary"
+        },
+        {
+          "value": 4,
+          "label": "Prefer not to answer"
+        }
+      ]
+    },
+    {
+      "field": "cov_race",
+      "label": "Race",
+      "type": "categorical",
+      "options": [
+        {
+          "value": 1,
+          "label": "White"
+        },
+        {
+          "value": 2,
+          "label": "Black or African American"
+        },
+        {
+          "value": 3,
+          "label": "Asian"
+        },
+        {
+          "value": 4,
+          "label": "American Indian or Alaska Native"
+        },
+        {
+          "value": 5,
+          "label": "Other"
+        },
+        {
+          "value": 6,
+          "label": "Multiracial"
+        }
+      ]
+    },
+    {
+      "field": "cov_education",
+      "label": "Education",
+      "type": "categorical",
+      "options": [
+        {
+          "value": 1,
+          "label": "Less than high school"
+        },
+        {
+          "value": 2,
+          "label": "High school / GED"
+        },
+        {
+          "value": 3,
+          "label": "Some college"
+        },
+        {
+          "value": 4,
+          "label": "Associate's / Technical"
+        },
+        {
+          "value": 5,
+          "label": "Bachelor's Degree"
+        },
+        {
+          "value": 6,
+          "label": "Master's Degree"
+        },
+        {
+          "value": 7,
+          "label": "Professional Degree"
+        },
+        {
+          "value": 8,
+          "label": "Doctorate Degree"
+        }
+      ]
+    },
+    {
+      "field": "cov_household_income",
+      "label": "Household income",
+      "type": "categorical",
+      "options": [
+        {
+          "value": 1,
+          "label": "<$10k"
+        },
+        {
+          "value": 2,
+          "label": "$10k-$15k"
+        },
+        {
+          "value": 3,
+          "label": "$15k-$25k"
+        },
+        {
+          "value": 4,
+          "label": "$25k-$35k"
+        },
+        {
+          "value": 5,
+          "label": "$35k-$50k"
+        },
+        {
+          "value": 6,
+          "label": "$50k-$75k"
+        },
+        {
+          "value": 7,
+          "label": "$75k-$100k"
+        },
+        {
+          "value": 8,
+          "label": "$100k-$150k"
+        },
+        {
+          "value": 9,
+          "label": "$150k-$200k"
+        },
+        {
+          "value": 10,
+          "label": "$200k+"
+        }
+      ]
+    },
+    {
+      "field": "cov_home_ownership",
+      "label": "Home ownership",
+      "type": "categorical",
+      "options": [
+        {
+          "value": 1,
+          "label": "Rented"
+        },
+        {
+          "value": 2,
+          "label": "Owned with mortgage"
+        },
+        {
+          "value": 3,
+          "label": "Owned without mortgage"
+        },
+        {
+          "value": 4,
+          "label": "No payment"
+        }
+      ]
+    }
+  ]
+}
