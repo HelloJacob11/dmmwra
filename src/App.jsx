@@ -1,24 +1,18 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { FilterProvider } from './context/FilterContext'
 import AppShell from './layout/AppShell'
-import Overview from './pages/Overview'
-import OverflowEvents from './pages/OverflowEvents'
-import HealthImpact from './pages/HealthImpact'
-import Infrastructure from './pages/Infrastructure'
-import EquityDemographics from './pages/EquityDemographics'
-import Methodology from './pages/Methodology'
+import SurveySection from './pages/SurveySection'
+import meta from './meta.json'
 
 function App() {
   return (
     <FilterProvider>
       <Routes>
         <Route element={<AppShell />}>
-          <Route path="/" element={<Overview />} />
-          <Route path="/overflow-events" element={<OverflowEvents />} />
-          <Route path="/health-impact" element={<HealthImpact />} />
-          <Route path="/infrastructure" element={<Infrastructure />} />
-          <Route path="/equity" element={<EquityDemographics />} />
-          <Route path="/methodology" element={<Methodology />} />
+          <Route index element={<Navigate to={`/${meta.sections[0].id}`} replace />} />
+          {meta.sections.map((section) => (
+            <Route key={section.id} path={section.id} element={<SurveySection section={section} />} />
+          ))}
         </Route>
       </Routes>
     </FilterProvider>

@@ -12,11 +12,11 @@ export default function MultiSelect({ label, options, selected, onChange }) {
     return () => document.removeEventListener('mousedown', onClickOutside)
   }, [])
 
-  function toggleOption(option) {
-    if (selected.includes(option)) {
-      onChange(selected.filter((o) => o !== option))
+  function toggleOption(value) {
+    if (selected.includes(value)) {
+      onChange(selected.filter((v) => v !== value))
     } else {
-      onChange([...selected, option])
+      onChange([...selected, value])
     }
   }
 
@@ -43,14 +43,14 @@ export default function MultiSelect({ label, options, selected, onChange }) {
           )}
           <ul>
             {options.map((option) => (
-              <li key={option}>
+              <li key={option.value}>
                 <label className="multiselect-option">
                   <input
                     type="checkbox"
-                    checked={selected.includes(option)}
-                    onChange={() => toggleOption(option)}
+                    checked={selected.includes(option.value)}
+                    onChange={() => toggleOption(option.value)}
                   />
-                  {option}
+                  {option.label}
                 </label>
               </li>
             ))}

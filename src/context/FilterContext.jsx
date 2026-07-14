@@ -4,30 +4,31 @@ import { DEMOGRAPHIC_FIELDS } from '../data/demographics'
 
 const FilterContext = createContext(null)
 
-const FIELD_KEYS = DEMOGRAPHIC_FIELDS.map((f) => f.key)
+const FIELDS = DEMOGRAPHIC_FIELDS.map((f) => f.field)
 
-// Filters live in the URL (?zip=50314,50316&income=...) so a council member
-// or analyst can share a filtered view of any page with a link.
+// Filters live in the URL (?cov_zip_code=50314,50316&cov_household_income=...)
+// so a filtered view of any section can be shared via link. Keys are the raw
+// coded column names from data.json, so filter matching never needs a lookup.
 export function FilterProvider({ children }) {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const filters = useMemo(() => {
     const next = {}
-    for (const key of FIELD_KEYS) {
-      const raw = searchParams.get(key)
-      next[key] = raw ? raw.split(',').filter(Boolean) : []
+    for (const field of FIELDS) {
+      const raw = searchParams.get(field)
+      next[field] = raw ? raw.split(',').filter(Boolean) : []
     }
     return next
   }, [searchParams])
 
-  const activeCount = FIELD_KEYS.reduce((sum, key) => sum + filters[key].length, 0)
+  const activeCount = FIELDS.reduce((sum, field) => sum + filters[field].length, 0)
 
-  function setFilter(key, values) {
+  function setFilter(field, values) {
     setSearchParams(
       (prev) => {
         const next = new URLSearchParams(prev)
-        if (values.length) next.set(key, values.join(','))
-        else next.delete(key)
+        if (values.length) next.set(field, values.join(','))
+        else next.delete(field)
         return next
       },
       { replace: true },
@@ -37,7 +38,7 @@ export function FilterProvider({ children }) {
   function resetAll() {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev)
-      for (const key of FIELD_KEYS) next.delete(key)
+      for (const field of FIELDS) next.delete(field)
       return next
     })
   }
