@@ -40,3 +40,11 @@ export const BINARY_COLORS = ['#c3c2b7', SERIES[0]]
 // pair per the palette's diverging spec, with a neutral grey midpoint —
 // never red/green, which fails for red-green color vision deficiency.
 export const LIKERT_DIVERGING = ['#e34948', '#f1abaa', '#f0efec', '#9ec1ea', '#2a78d6']
+
+// Sequential (one hue, light -> dark) for magnitude on the ZIP choropleth —
+// same blue ramp as BAR_COLOR, quantized to 5 steps.
+export const MAP_SEQUENTIAL = ['#cde2fb', '#86b6ef', '#3987e5', '#1c5cab', '#0d366b']
+
+// Suppressed / no-data ZIPs share the same muted grey used for the binary
+// "No" bar — grey means "no reliable signal," not "zero."
+export const MAP_SUPPRESSED = BINARY_COLORS[0]

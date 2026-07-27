@@ -67,3 +67,25 @@ export function indexStats(records, field, binCount = 12) {
 
   return { mean, denom, histogram: bins }
 }
+
+// rows = respondents (already filtered by the active demographic filters)
+// metricKey = e.g. "flood_exposure_index" or "water_trust_sensory"
+// Small ZIPs are suppressed (not just grayed in the caller) so a low n never
+// implies a reliable average.
+export function aggregateByZip(rows, metricKey, threshold = 5) {
+  const groups = {}
+  for (const r of rows) {
+    const zipRaw = r.cov_zip_code
+    const val = r[metricKey]
+    if (zipRaw == null || val == null || Number.isNaN(Number(val))) continue // skip blanks
+    const zip = String(parseInt(zipRaw, 10)) // 50314.0 -> "50314"
+    ;(groups[zip] ??= []).push(Number(val))
+  }
+  const out = {}
+  for (const [zip, vals] of Object.entries(groups)) {
+    const n = vals.length // count of people who ANSWERED this metric
+    const mean = vals.reduce((a, b) => a + b, 0) / n
+    out[zip] = { n, value: mean, suppressed: n < threshold }
+  }
+  return out
+}
