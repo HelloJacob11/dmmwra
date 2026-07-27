@@ -4,6 +4,7 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import { aggregateByZip } from '../../utils/filterRecords'
 import { MAP_SEQUENTIAL, MAP_SUPPRESSED } from '../../theme/palette'
 import ChartCard from '../ChartCard'
+import * as maplibregl from 'maplibre-gl'
 
 const SUPPRESS_THRESHOLD = 5
 const GEOJSON_URL = '/des-moines-zips.geojson'
