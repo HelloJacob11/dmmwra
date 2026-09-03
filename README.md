@@ -1,16 +1,59 @@
-# React + Vite
+# Des Moines Resident Survey Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive dashboard for exploring City of Des Moines resident survey results — precipitation & flooding, sewer system knowledge, local government, and tap water. Built with React, Vite, and MapLibre.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Survey sections** — browse results across Flooding, Sewer System Knowledge, Local Government, and Tap Water, each rendered from `src/meta.json`.
+- **Demographic filters** — segment the ~400 survey responses by ZIP code and other demographic fields; the filter bar shows how many respondents match the current selection.
+- **Charts** — single-question and multi-select question breakdowns, plus a constructed index chart, built with Recharts.
+- **ZIP-level choropleth map** — a MapLibre GL map colors Des Moines ZIP codes by the average of a selected index for the currently filtered respondents, with small-sample ZIPs (n < 5) suppressed and greyed out.
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev/) + [React Router](https://reactrouter.com/)
+- [Vite](https://vite.dev/) for dev/build tooling
+- [MapLibre GL JS](https://maplibre.org/) for the ZIP choropleth map
+- [Recharts](https://recharts.org/) for survey charts
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+The app runs at `http://localhost:5173` by default.
+
+### Other scripts
+
+```bash
+npm run build    # production build to dist/
+npm run preview  # preview the production build locally
+npm run lint     # run ESLint
+```
+
+## Project structure
+
+```
+src/
+  components/
+    filters/     # FilterBar, MultiSelect
+    map/          # FloodMap (ZIP choropleth)
+    survey/       # question/index chart components
+    ChartCard.jsx
+  context/        # FilterContext (active demographic filters)
+  data/           # demographic field definitions
+  layout/         # AppShell, Sidebar
+  pages/          # SurveySection page
+  theme/          # color palette
+  utils/          # filtering, formatting, maplibre worker setup
+  data.json       # survey response records
+  meta.json       # section/filter/question metadata
+public/
+  des-moines-zips.geojson  # ZIP boundary shapes for the map
+```
+
+## Deployment
+
+Configured for [Vercel](https://vercel.com/) via `vercel.json`, with a rewrite rule for client-side routing (SPA) that excludes static assets and the GeoJSON file.
