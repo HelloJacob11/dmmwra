@@ -283,9 +283,10 @@
       "index": {
         "field": "flood_exposure_index",
         "label": "Flood Exposure Index",
+        "description": "Lived experience with yard and street flooding, plus beliefs about precipitation unpredictability. Higher scores mean more flood exposure.",
         "kind": "index",
         "chart": "distribution",
-        "note": "Standardized factor score (higher = more of the construct)."
+        "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
       },
       "questions": [
         {
@@ -547,9 +548,10 @@
       "index": {
         "field": "awareness_index",
         "label": "Sewer Awareness Index",
+        "description": "Knowledge of CSO infrastructure, sewer separation, and the Ingersoll project, including overflow notifications. Higher scores mean greater awareness.",
         "kind": "index",
         "chart": "distribution",
-        "note": "Standardized factor score (higher = more of the construct)."
+        "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
       },
       "questions": [
         {
@@ -955,23 +957,25 @@
         {
           "field": "institutional_trust_gov",
           "label": "Trust in Government",
+          "description": "Confidence in local government's responsiveness and accountability on flooding issues. Higher scores mean more trust in local government.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Standardized factor score (higher = more of the construct)."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
         },
         {
           "field": "institutional_trust_project",
           "label": "Trust in the Project",
+          "description": "Confidence that the Ingersoll project will directly benefit the respondent's household. Higher scores mean more trust in the project.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Standardized factor score (higher = more of the construct)."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
         },
         {
           "field": "institutional_trust_comm",
           "label": "Trust in Communication",
           "kind": "index",
           "chart": "distribution",
-          "note": "Standardized factor score (higher = more of the construct)."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
         }
       ],
       "questions": [
@@ -1131,16 +1135,18 @@
         {
           "field": "water_trust_sensory",
           "label": "Sensory Water Trust",
+          "description": "Perceptions of tap water safety based on taste, smell, color, and clarity. Higher scores mean more trust in tap water.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Standardized factor score (higher = more of the construct)."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
         },
         {
           "field": "water_trust_behavioral",
           "label": "Behavioral Water Trust",
+          "description": "Protective behaviors like filtering, boiling, or buying bottled water due to quality concerns.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Standardized factor score (higher = more of the construct)."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
         }
       ],
       "questions": [

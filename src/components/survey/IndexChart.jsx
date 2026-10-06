@@ -5,8 +5,8 @@ import { indexStats } from '../../utils/filterRecords'
 import { CHART_CHROME, INDEX_COLOR } from '../../theme/palette'
 import ChartCard from '../ChartCard'
 
-// Constructed factor score: a distribution of the standardized index across
-// the current selection, plus its mean.
+// Constructed index score: a distribution of the index across the current
+// selection, plus its mean.
 export default function IndexChart({ indexDef, records }) {
   const { mean, denom, histogram } = indexStats(records, indexDef.field)
   const data = histogram.map((b) => ({
@@ -17,6 +17,7 @@ export default function IndexChart({ indexDef, records }) {
   return (
     <ChartCard
       title={indexDef.label}
+      description={indexDef.description}
       subtitle={indexDef.note}
       footnote={denom === 0 ? 'No respondents in the current selection have this score.' : undefined}
     >
