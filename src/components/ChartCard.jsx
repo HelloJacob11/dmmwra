@@ -1,9 +1,10 @@
-export default function ChartCard({ title, subtitle, footnote, children, className = '' }) {
+export default function ChartCard({ title, question, subtitle, footnote, children, className = '' }) {
   return (
     <div className={`chart-card ${className}`}>
       <div className="chart-card-header">
         <div>
           <h3>{title}</h3>
+          {question && <p className="chart-card-question">{question}</p>}
           {subtitle && <p className="chart-card-subtitle">{subtitle}</p>}
         </div>
       </div>

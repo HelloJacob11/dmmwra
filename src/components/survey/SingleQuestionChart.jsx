@@ -24,6 +24,7 @@ export default function SingleQuestionChart({ question, records }) {
   return (
     <ChartCard
       title={question.label}
+      question={question.question}
       subtitle={`n = ${denom.toLocaleString()} answered`}
       footnote={denom === 0 ? 'No respondents in the current selection answered this question.' : undefined}
     >

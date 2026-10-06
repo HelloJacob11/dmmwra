@@ -291,6 +291,7 @@
         {
           "field": "fcc_yard_flood_freq",
           "label": "Yard flooding frequency",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -319,6 +320,7 @@
         {
           "field": "fcc_street_flood_freq",
           "label": "Street flooding frequency",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -347,6 +349,7 @@
         {
           "field": "fcc_flood_cause_primary",
           "label": "Primary perceived cause of flooding",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -379,6 +382,7 @@
         {
           "field": "fcc_rainfall_qol_impact",
           "label": "How flooding has affected quality of life",
+          "question": "",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -419,6 +423,7 @@
         {
           "field": "fcc_extreme_precip_increase",
           "label": "Noticed increase in extreme precipitation",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -435,6 +440,7 @@
         {
           "field": "fcc_extreme_precip_duration",
           "label": "Noticed longer-lasting rainfall",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -451,6 +457,7 @@
         {
           "field": "fcc_extreme_precip_type",
           "label": "Types of extreme precipitation observed",
+          "question": "",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -475,6 +482,7 @@
         {
           "field": "fcc_seasonal_unpredictability",
           "label": "Seasonal precipitation feels unpredictable",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -503,6 +511,7 @@
         {
           "field": "fcc_climate_change_concern",
           "label": "Concerned climate change drives unpredictability",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -546,6 +555,7 @@
         {
           "field": "iu_sewer_type_knowledge",
           "label": "Believed sewer system type in Des Moines",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -566,6 +576,7 @@
         {
           "field": "iu_sewer_knowledge_known",
           "label": "Knows the sewer system type",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -582,6 +593,7 @@
         {
           "field": "iu_stormwater_outlet_seen",
           "label": "Has seen a stormwater outlet locally",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -598,6 +610,7 @@
         {
           "field": "iu_sewer_overflow_affected",
           "label": "Overflow event affected household/community",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -614,6 +627,7 @@
         {
           "field": "nc_sewer_info_access",
           "label": "Knows how to access sewer info",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -630,6 +644,7 @@
         {
           "field": "nc_sewer_info_confidence",
           "label": "Confidence that sewer info is up to date",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -658,6 +673,7 @@
         {
           "field": "nc_sewer_issue_comm_confidence",
           "label": "Confidence they'd be told of a sewer issue in time",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -686,6 +702,7 @@
         {
           "field": "nc_sewer_info_source",
           "label": "Where residents get sewer information",
+          "question": "",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -722,6 +739,7 @@
         {
           "field": "nc_ingersoll_aware",
           "label": "Aware of the Ingersoll project",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -738,6 +756,7 @@
         {
           "field": "nc_ingersoll_comm_satisfaction",
           "label": "Satisfaction with Ingersoll communication",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -766,6 +785,7 @@
         {
           "field": "iu_ingersoll_serves_household",
           "label": "Confidence Ingersoll serves their household",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -794,6 +814,7 @@
         {
           "field": "iu_ingersoll_serves_community",
           "label": "Confidence Ingersoll serves their community",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -822,6 +843,7 @@
         {
           "field": "iu_neighborhood_priority",
           "label": "Felt their neighborhood was a priority",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -850,6 +872,7 @@
         {
           "field": "nc_overflow_noti_pre_ingersoll",
           "label": "Notified of overflows before Ingersoll",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -870,6 +893,7 @@
         {
           "field": "nc_longterm_separation_aware",
           "label": "Aware of the long-term separation project",
+          "question": "",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -886,6 +910,7 @@
         {
           "field": "nc_preferred_comm_channel",
           "label": "Preferred channel for infrastructure updates",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -953,6 +978,7 @@
         {
           "field": "iu_gov_investment_confidence",
           "label": "Gov invests in meaningful infrastructure",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -981,6 +1007,7 @@
         {
           "field": "iu_gov_community_collab",
           "label": "Gov works with community groups",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1009,6 +1036,7 @@
         {
           "field": "iu_gov_listens_to_residents",
           "label": "Officials listen to residents' experiences",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1037,6 +1065,7 @@
         {
           "field": "iu_gov_fixes_neglected",
           "label": "City fixes long-neglected neighborhoods",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1065,6 +1094,7 @@
         {
           "field": "nc_gov_contact_knowledge",
           "label": "Would know who to contact about sewer issues",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1117,6 +1147,7 @@
         {
           "field": "twt_tp_safe_belief",
           "label": "Believes home tap water is safe",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1145,6 +1176,7 @@
         {
           "field": "twt_tp_taste",
           "label": "Acceptability of taste",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1173,6 +1205,7 @@
         {
           "field": "twt_tp_appearance",
           "label": "Acceptability of appearance",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1201,6 +1234,7 @@
         {
           "field": "twt_tp_smell",
           "label": "Acceptability of smell",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1229,6 +1263,7 @@
         {
           "field": "twt_bw_spend",
           "label": "Weekly bottled-water spending",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1261,6 +1296,7 @@
         {
           "field": "twt_tp_quality_seasonal",
           "label": "Believes tap quality varies by season",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1277,6 +1313,7 @@
         {
           "field": "twt_tp_quality_weather",
           "label": "Weather events thought to affect tap quality",
+          "question": "",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -1301,6 +1338,7 @@
         {
           "field": "twt_filter",
           "label": "Filters used in the home",
+          "question": "",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -1337,6 +1375,7 @@
         {
           "field": "twt_contaminant",
           "label": "Contaminants residents are concerned about",
+          "question": "",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -1385,6 +1424,7 @@
         {
           "field": "twt_bw_label_check",
           "label": "Checks bottled-water labels",
+          "question": "",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1413,6 +1453,7 @@
         {
           "field": "nc_tap_concern_contact",
           "label": "Could find someone to discuss tap-water concerns",
+          "question": "",
           "kind": "single",
           "chart": "likert",
           "options": [

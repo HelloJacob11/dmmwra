@@ -17,6 +17,7 @@ export default function MultiselectQuestionChart({ question, records }) {
   return (
     <ChartCard
       title={question.label}
+      question={question.question}
       subtitle={`Select all that apply · n = ${denom.toLocaleString()} answered`}
       footnote="Respondents could choose more than one option, so shares don't sum to 100%."
     >
