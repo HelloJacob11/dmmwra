@@ -21,6 +21,12 @@ export default function Sidebar() {
             {section.title}
           </NavLink>
         ))}
+        <NavLink
+          to="/community-work"
+          className={({ isActive }) => `sidebar-nav-link${isActive ? ' is-active' : ''}`}
+        >
+          Community Work
+        </NavLink>
       </nav>
       <div className="sidebar-footer">
         {meta.n_records.toLocaleString()} residents surveyed.

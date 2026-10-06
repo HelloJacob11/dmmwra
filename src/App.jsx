@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { FilterProvider } from './context/FilterContext'
 import AppShell from './layout/AppShell'
 import SurveySection from './pages/SurveySection'
+import CommunityWork from './pages/CommunityWork'
 import meta from './meta.json'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           {meta.sections.map((section) => (
             <Route key={section.id} path={section.id} element={<SurveySection section={section} />} />
           ))}
+          <Route path="community-work" element={<CommunityWork />} />
         </Route>
       </Routes>
     </FilterProvider>
