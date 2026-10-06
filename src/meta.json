@@ -291,7 +291,7 @@
         {
           "field": "fcc_yard_flood_freq",
           "label": "Yard flooding frequency",
-          "question": "",
+          "question": "How often does your yard flood during an ordinary, regularly-occurring rain event?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -320,7 +320,7 @@
         {
           "field": "fcc_street_flood_freq",
           "label": "Street flooding frequency",
-          "question": "",
+          "question": "How often does your street flood during an ordinary, regularly-occurring rain event?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -349,7 +349,7 @@
         {
           "field": "fcc_flood_cause_primary",
           "label": "Primary perceived cause of flooding",
-          "question": "",
+          "question": "What do you think is the primary cause of flooding in your neighborhood, if applicable?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -382,7 +382,7 @@
         {
           "field": "fcc_rainfall_qol_impact",
           "label": "How flooding has affected quality of life",
-          "question": "",
+          "question": "Since living at your current address, how have regularly-occurring rainfall events affected your quality of life, if at all? Select all that apply.",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -423,7 +423,7 @@
         {
           "field": "fcc_extreme_precip_increase",
           "label": "Noticed increase in extreme precipitation",
-          "question": "",
+          "question": "Over the past 10 years, have you noticed an increase in how often extreme precipitation events happen in Des Moines? An extreme precipitation event can be defined as a precipitation event that seriously disrupts your daily life or activities.",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -440,7 +440,7 @@
         {
           "field": "fcc_extreme_precip_duration",
           "label": "Noticed longer-lasting rainfall",
-          "question": "",
+          "question": "In addition to observing an increase in how often extreme precipitation events take place, have you noticed an increase in the duration (that is, how long rainfall lasts) of these events?",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -457,7 +457,7 @@
         {
           "field": "fcc_extreme_precip_type",
           "label": "Types of extreme precipitation observed",
-          "question": "",
+          "question": "For which of the following have you observed this increased occurrence of extreme events? Select all that apply.",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -482,7 +482,7 @@
         {
           "field": "fcc_seasonal_unpredictability",
           "label": "Seasonal precipitation feels unpredictable",
-          "question": "",
+          "question": "How strongly do you agree with the following statement: “I feel that seasonal precipitation in Des Moines is becoming increasingly unpredictable”?",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -511,7 +511,7 @@
         {
           "field": "fcc_climate_change_concern",
           "label": "Concerned climate change drives unpredictability",
-          "question": "",
+          "question": "How strongly do you agree with the following statement: “I am concerned that climate change is making seasonal precipitation in Des Moines increasingly unpredictable”?",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -555,7 +555,7 @@
         {
           "field": "iu_sewer_type_knowledge",
           "label": "Believed sewer system type in Des Moines",
-          "question": "",
+          "question": "To the best of your knowledge, what type of sewer system does Des Moines currently have?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -576,7 +576,7 @@
         {
           "field": "iu_sewer_knowledge_known",
           "label": "Knows the sewer system type",
-          "question": "",
+          "question": "To the best of your knowledge, what type of sewer system does Des Moines currently have?",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -593,7 +593,7 @@
         {
           "field": "iu_stormwater_outlet_seen",
           "label": "Has seen a stormwater outlet locally",
-          "question": "",
+          "question": "To the best of your knowledge, have you ever seen a stormwater outlet like those pictured above in your neighborhood?",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -610,7 +610,7 @@
         {
           "field": "iu_sewer_overflow_affected",
           "label": "Overflow event affected household/community",
-          "question": "",
+          "question": "Has a sewer overflow event ever affected your community or household?",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -627,7 +627,7 @@
         {
           "field": "nc_sewer_info_access",
           "label": "Knows how to access sewer info",
-          "question": "",
+          "question": "Do you know how to access information about sewer system malfunctions, overflows, or construction work?",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -644,7 +644,7 @@
         {
           "field": "nc_sewer_info_confidence",
           "label": "Confidence that sewer info is up to date",
-          "question": "",
+          "question": "How much confidence do you have that the information you are accessing is up to date?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -673,7 +673,7 @@
         {
           "field": "nc_sewer_issue_comm_confidence",
           "label": "Confidence they'd be told of a sewer issue in time",
-          "question": "",
+          "question": "Should any issue occur regarding the sewer system in your neighborhood, how much confidence do you have that you would receive communication of this issue in a timely manner?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -702,7 +702,7 @@
         {
           "field": "nc_sewer_info_source",
           "label": "Where residents get sewer information",
-          "question": "",
+          "question": "Where do you obtain information regarding Des Moines sewer system malfunctions, overflows, or construction work? Select all that apply.",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -739,7 +739,7 @@
         {
           "field": "nc_ingersoll_aware",
           "label": "Aware of the Ingersoll project",
-          "question": "",
+          "question": "Were you aware of the Ingersoll Sewer Separation Project?",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -756,7 +756,7 @@
         {
           "field": "nc_ingersoll_comm_satisfaction",
           "label": "Satisfaction with Ingersoll communication",
-          "question": "",
+          "question": "How satisfied were you with the city's communication about the Ingersoll Project?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -785,7 +785,7 @@
         {
           "field": "iu_ingersoll_serves_household",
           "label": "Confidence Ingersoll serves their household",
-          "question": "",
+          "question": "How confident are you that this project will directly serve your household?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -814,7 +814,7 @@
         {
           "field": "iu_ingersoll_serves_community",
           "label": "Confidence Ingersoll serves their community",
-          "question": "",
+          "question": "How confident are you that this project will directly serve your community?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -843,7 +843,7 @@
         {
           "field": "iu_neighborhood_priority",
           "label": "Felt their neighborhood was a priority",
-          "question": "",
+          "question": "Do you feel that your neighborhood was a priority for the city in this long-term sewer separation project?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -872,7 +872,7 @@
         {
           "field": "nc_overflow_noti_pre_ingersoll",
           "label": "Notified of overflows before Ingersoll",
-          "question": "",
+          "question": "Before the completion of the Ingersoll Sewer Separation Project (May 2025), were you ever notified of a sewer overflow event taking place in your neighborhood?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -893,7 +893,7 @@
         {
           "field": "nc_longterm_separation_aware",
           "label": "Aware of the long-term separation project",
-          "question": "",
+          "question": "Outside of the Ingersoll project, were you aware that the city had been undertaking a long-term sewer separation project?",
           "kind": "single",
           "chart": "binary",
           "options": [
@@ -910,7 +910,7 @@
         {
           "field": "nc_preferred_comm_channel",
           "label": "Preferred channel for infrastructure updates",
-          "question": "",
+          "question": "How would you best prefer to receive communication about infrastructure projects such as the Ingersoll Project that may take place near you? Select your #1 preference.",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -978,7 +978,7 @@
         {
           "field": "iu_gov_investment_confidence",
           "label": "Gov invests in meaningful infrastructure",
-          "question": "",
+          "question": "“I am confident that city government is investing in meaningful and necessary infrastructure projects in my city.”",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1007,7 +1007,7 @@
         {
           "field": "iu_gov_community_collab",
           "label": "Gov works with community groups",
-          "question": "",
+          "question": "“My local government works with community groups to solve problems that affect their neighborhoods.”",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1036,7 +1036,7 @@
         {
           "field": "iu_gov_listens_to_residents",
           "label": "Officials listen to residents' experiences",
-          "question": "",
+          "question": "“I believe that city and local officials listen to people's experiences and take them into account when making decisions about urban infrastructure such as sewer management.”",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1065,7 +1065,7 @@
         {
           "field": "iu_gov_fixes_neglected",
           "label": "City fixes long-neglected neighborhoods",
-          "question": "",
+          "question": "“The city is committed to fixing public infrastructure problems in neighborhoods that have been ignored in the past.”",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1094,7 +1094,7 @@
         {
           "field": "nc_gov_contact_knowledge",
           "label": "Would know who to contact about sewer issues",
-          "question": "",
+          "question": "“If I had a concern regarding my neighborhood's public sewer infrastructure management, I would know who to talk to in the local government.”",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1147,7 +1147,7 @@
         {
           "field": "twt_tp_safe_belief",
           "label": "Believes home tap water is safe",
-          "question": "",
+          "question": "Rate how strongly you agree with the following statement: “I believe that the tap water in my home is safe.”",
           "kind": "single",
           "chart": "likert",
           "options": [
@@ -1176,7 +1176,7 @@
         {
           "field": "twt_tp_taste",
           "label": "Acceptability of taste",
-          "question": "",
+          "question": "How acceptable is the taste of your home's tap water for drinking?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1205,7 +1205,7 @@
         {
           "field": "twt_tp_appearance",
           "label": "Acceptability of appearance",
-          "question": "",
+          "question": "How acceptable is the appearance (that is, how it looks coming out of the faucet) of your home's tap water for drinking?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1234,7 +1234,7 @@
         {
           "field": "twt_tp_smell",
           "label": "Acceptability of smell",
-          "question": "",
+          "question": "How acceptable is the smell of your home's tap water for drinking?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1263,7 +1263,7 @@
         {
           "field": "twt_bw_spend",
           "label": "Weekly bottled-water spending",
-          "question": "",
+          "question": "In an average week, how much does your household spend on bottled water?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1296,7 +1296,7 @@
         {
           "field": "twt_tp_quality_seasonal",
           "label": "Believes tap quality varies by season",
-          "question": "",
+          "question": "Do you believe your tap water quality varies by season?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1313,7 +1313,7 @@
         {
           "field": "twt_tp_quality_weather",
           "label": "Weather events thought to affect tap quality",
-          "question": "",
+          "question": "Which of the following weather events do you think affects your tap water quality? Select all that apply.",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -1338,7 +1338,7 @@
         {
           "field": "twt_filter",
           "label": "Filters used in the home",
-          "question": "",
+          "question": "Do you use a filter in your house for any of the following appliances? Select all that apply.",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -1375,7 +1375,7 @@
         {
           "field": "twt_contaminant",
           "label": "Contaminants residents are concerned about",
-          "question": "",
+          "question": "Are you concerned about any of the following contaminants being present in your Des Moines tap water?",
           "kind": "multiselect",
           "chart": "bar_multiselect",
           "members": [
@@ -1424,7 +1424,7 @@
         {
           "field": "twt_bw_label_check",
           "label": "Checks bottled-water labels",
-          "question": "",
+          "question": "How often, when purchasing bottled water, do you check the label for the source or methods used to treat the bottled water?",
           "kind": "single",
           "chart": "bar",
           "options": [
@@ -1453,7 +1453,7 @@
         {
           "field": "nc_tap_concern_contact",
           "label": "Could find someone to discuss tap-water concerns",
-          "question": "",
+          "question": "Rate how strongly you agree with the following statement: “If I had a concern about my tap water quality, I would be able to find someone from the city government to talk to about it.”",
           "kind": "single",
           "chart": "likert",
           "options": [
