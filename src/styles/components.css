@@ -225,6 +225,11 @@
   gap: 12px;
 }
 
+/* In a row of cards, let the header absorb extra height so charts line up. */
+.grid .chart-card-header {
+  flex: 1;
+}
+
 .chart-card-question {
   font-size: 13px;
   font-style: italic;

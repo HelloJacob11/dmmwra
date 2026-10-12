@@ -956,7 +956,7 @@
       "indices": [
         {
           "field": "institutional_trust_gov",
-          "label": "Trust in Government",
+          "label": "Trust in Government Index",
           "description": "Confidence in local government's responsiveness and accountability on flooding issues. Higher scores mean more trust in local government.",
           "kind": "index",
           "chart": "distribution",
@@ -964,7 +964,7 @@
         },
         {
           "field": "institutional_trust_project",
-          "label": "Trust in the Project",
+          "label": "Trust in the Project Index",
           "description": "Confidence that the Ingersoll project will directly benefit the respondent's household. Higher scores mean more trust in the project.",
           "kind": "index",
           "chart": "distribution",
@@ -972,7 +972,8 @@
         },
         {
           "field": "institutional_trust_comm",
-          "label": "Trust in Communication",
+          "label": "Trust in Communication Index",
+          "description": "Trust in how the city communicates with residents. Higher scores mean more trust in institutional communication.",
           "kind": "index",
           "chart": "distribution",
           "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
@@ -1134,7 +1135,7 @@
       "indices": [
         {
           "field": "water_trust_sensory",
-          "label": "Sensory Water Trust",
+          "label": "Sensory Water Trust Index",
           "description": "Perceptions of tap water safety based on taste, smell, color, and clarity. Higher scores mean more trust in tap water.",
           "kind": "index",
           "chart": "distribution",
@@ -1142,8 +1143,8 @@
         },
         {
           "field": "water_trust_behavioral",
-          "label": "Behavioral Water Trust",
-          "description": "Protective behaviors like filtering, boiling, or buying bottled water due to quality concerns.",
+          "label": "Behavioral Water Trust Index",
+          "description": "Protective behaviors like filtering, boiling, or buying bottled water due to quality concerns. Items are reverse-coded, so higher scores mean fewer protective behaviors and more trust in tap water.",
           "kind": "index",
           "chart": "distribution",
           "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
