@@ -286,7 +286,15 @@
         "description": "Lived experience with yard and street flooding, plus beliefs about precipitation unpredictability. Higher scores mean more flood exposure.",
         "kind": "index",
         "chart": "distribution",
-        "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
+        "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection.",
+        "items": [
+          "How often your yard floods during ordinary rain",
+          "How often your street floods during ordinary rain",
+          "How many ways regular rainfall has affected your quality of life",
+          "How many types of precipitation you've seen become more extreme",
+          "Agreement that seasonal precipitation is becoming unpredictable",
+          "Concern that climate change is making precipitation unpredictable"
+        ]
       },
       "questions": [
         {
@@ -551,7 +559,15 @@
         "description": "Knowledge of CSO infrastructure, sewer separation, and the Ingersoll project, including overflow notifications. Higher scores mean greater awareness.",
         "kind": "index",
         "chart": "distribution",
-        "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
+        "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection.",
+        "items": [
+          "Knows what type of sewer system Des Moines has",
+          "Knows how to access information about sewer issues",
+          "Has seen a stormwater outlet in their neighborhood",
+          "Was aware of the Ingersoll Sewer Separation Project",
+          "Was notified of a sewer overflow before Ingersoll was completed",
+          "Was aware of the city's long-term sewer separation project"
+        ]
       },
       "questions": [
         {
@@ -960,7 +976,13 @@
           "description": "Confidence in local government's responsiveness and accountability on flooding issues. Higher scores mean more trust in local government.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection.",
+          "items": [
+            "City government invests in meaningful and necessary infrastructure",
+            "Local government works with community groups to solve neighborhood problems",
+            "Officials listen to residents' experiences when making infrastructure decisions",
+            "The city is committed to fixing problems in neighborhoods ignored in the past"
+          ]
         },
         {
           "field": "institutional_trust_project",
@@ -968,7 +990,12 @@
           "description": "Confidence that the Ingersoll project will directly benefit the respondent's household. Higher scores mean more trust in the project.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection.",
+          "items": [
+            "Confidence the Ingersoll project will directly serve your household",
+            "Confidence the Ingersoll project will directly serve your community",
+            "Feeling that your neighborhood was a priority in the sewer separation project"
+          ]
         },
         {
           "field": "institutional_trust_comm",
@@ -976,7 +1003,12 @@
           "description": "General trust in communication from local government and institutions. Higher scores mean more trust in institutional communication.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection.",
+          "items": [
+            "Confidence you'd be told about a neighborhood sewer issue in a timely manner",
+            "Would know who in local government to talk to about sewer concerns",
+            "Could find someone in city government to talk to about tap water concerns"
+          ]
         }
       ],
       "questions": [
@@ -1139,7 +1171,13 @@
           "description": "Perceptions of tap water safety based on taste, smell, color, and clarity. Higher scores mean more trust in tap water.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection.",
+          "items": [
+            "Belief that the tap water in your home is safe",
+            "How acceptable the taste of your tap water is",
+            "How acceptable the appearance of your tap water is",
+            "How acceptable the smell of your tap water is"
+          ]
         },
         {
           "field": "water_trust_behavioral",
@@ -1147,7 +1185,13 @@
           "description": "Protective behaviors like filtering, boiling, or buying bottled water due to quality concerns. Items are reverse-coded, so higher scores mean fewer protective behaviors and more trust in tap water.",
           "kind": "index",
           "chart": "distribution",
-          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
+          "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection.",
+          "items": [
+            "How much your household spends on bottled water each week",
+            "How often you check bottled-water labels for source or treatment",
+            "How many home water filters you use"
+          ],
+          "items_note": "All three are reverse-coded: spending less, checking labels less often, and using fewer filters raise the score."
         }
       ],
       "questions": [

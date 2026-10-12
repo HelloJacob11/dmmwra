@@ -4,6 +4,7 @@ import {
 import { indexStats } from '../../utils/filterRecords'
 import { CHART_CHROME, INDEX_COLOR } from '../../theme/palette'
 import ChartCard from '../ChartCard'
+import InfoPopover from '../InfoPopover'
 
 // Constructed index score: a distribution of the index across the current
 // selection, plus its mean.
@@ -17,6 +18,15 @@ export default function IndexChart({ indexDef, records }) {
   return (
     <ChartCard
       title={indexDef.label}
+      titleExtra={indexDef.items?.length > 0 && (
+        <InfoPopover label={`Questions used in the ${indexDef.label}`}>
+          <p className="info-popover-heading">Survey questions in this index</p>
+          <ul>
+            {indexDef.items.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+          {indexDef.items_note && <p className="info-popover-note">{indexDef.items_note}</p>}
+        </InfoPopover>
+      )}
       description={indexDef.description}
       subtitle={indexDef.note}
       footnote={denom === 0 ? 'No respondents in the current selection have this score.' : undefined}
