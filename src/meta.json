@@ -973,7 +973,7 @@
         {
           "field": "institutional_trust_comm",
           "label": "Trust in Communication Index",
-          "description": "Trust in how the city communicates with residents. Higher scores mean more trust in institutional communication.",
+          "description": "General trust in communication from local government and institutions. Higher scores mean more trust in institutional communication.",
           "kind": "index",
           "chart": "distribution",
           "note": "Each bar counts respondents within a score range; the large number is the average score for the current selection."
