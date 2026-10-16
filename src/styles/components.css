@@ -303,6 +303,29 @@
   flex: 1;
 }
 
+/* A card paired with a taller neighbor (e.g. the map) grows its chart
+   instead of leaving a gap under the header. */
+.grid .chart-card--fill .chart-card-header {
+  flex: none;
+}
+
+.chart-card--fill .chart-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.index-chart-plot {
+  height: 180px;
+}
+
+.chart-card--fill .index-chart-plot {
+  flex: 1;
+  height: auto;
+  min-height: 180px;
+}
+
 .chart-card-question {
   font-size: 13px;
   font-style: italic;

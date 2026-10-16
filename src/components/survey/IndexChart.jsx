@@ -8,7 +8,7 @@ import InfoPopover from '../InfoPopover'
 
 // Constructed index score: a distribution of the index across the current
 // selection, plus its mean.
-export default function IndexChart({ indexDef, records }) {
+export default function IndexChart({ indexDef, records, fill = false }) {
   const { mean, denom, histogram } = indexStats(records, indexDef.field)
   const data = histogram.map((b) => ({
     bin: `${b.start.toFixed(1)}`,
@@ -17,6 +17,7 @@ export default function IndexChart({ indexDef, records }) {
 
   return (
     <ChartCard
+      className={fill ? 'chart-card--fill' : ''}
       title={indexDef.label}
       titleExtra={indexDef.items?.length > 0 && (
         <InfoPopover label={`Questions used in the ${indexDef.label}`}>
@@ -35,31 +36,33 @@ export default function IndexChart({ indexDef, records }) {
         <span className="index-mean-value">{denom ? mean.toFixed(2) : '—'}</span>
         <span className="index-mean-label">mean · n = {denom.toLocaleString()}</span>
       </div>
-      <ResponsiveContainer width="100%" height={180}>
-        <BarChart data={data} margin={{ top: 4, right: 8, left: -12, bottom: 0 }}>
-          <CartesianGrid vertical={false} stroke={CHART_CHROME.gridline} />
-          <XAxis
-            dataKey="bin"
-            tick={{ fontSize: 10, fill: CHART_CHROME.textMuted }}
-            axisLine={{ stroke: CHART_CHROME.baseline }}
-            tickLine={false}
-            interval={1}
-          />
-          <YAxis
-            tick={{ fontSize: 11, fill: CHART_CHROME.textMuted }}
-            axisLine={false}
-            tickLine={false}
-            width={28}
-            allowDecimals={false}
-          />
-          <Tooltip
-            labelFormatter={(label) => `Score ≥ ${label}`}
-            formatter={(value) => [value, 'Respondents']}
-            contentStyle={{ fontSize: 12, borderRadius: 8 }}
-          />
-          <Bar dataKey="count" name="Respondents" fill={INDEX_COLOR} radius={[3, 3, 0, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
+      <div className="index-chart-plot">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} margin={{ top: 4, right: 8, left: -8, bottom: 0 }}>
+            <CartesianGrid vertical={false} stroke={CHART_CHROME.gridline} />
+            <XAxis
+              dataKey="bin"
+              tick={{ fontSize: 10, fill: CHART_CHROME.textMuted }}
+              axisLine={{ stroke: CHART_CHROME.baseline }}
+              tickLine={false}
+              interval={1}
+            />
+            <YAxis
+              tick={{ fontSize: 11, fill: CHART_CHROME.textMuted }}
+              axisLine={false}
+              tickLine={false}
+              width={36}
+              allowDecimals={false}
+            />
+            <Tooltip
+              labelFormatter={(label) => `Score ≥ ${label}`}
+              formatter={(value) => [value, 'Respondents']}
+              contentStyle={{ fontSize: 12, borderRadius: 8 }}
+            />
+            <Bar dataKey="count" name="Respondents" fill={INDEX_COLOR} radius={[3, 3, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </ChartCard>
   )
 }

@@ -37,7 +37,7 @@ export default function SurveySection({ section }) {
 
       {mappedIndex && (
         <div className="grid grid-2">
-          <IndexChart indexDef={mappedIndex} records={records} />
+          <IndexChart indexDef={mappedIndex} records={records} fill />
           <FloodMap rows={records} metric={mappedIndex.field} label={`${mappedIndex.label} by ZIP`} />
         </div>
       )}
