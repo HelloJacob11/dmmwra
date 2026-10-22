@@ -324,7 +324,8 @@
               "value": 4,
               "label": "Always (every time it rains)"
             }
-          ]
+          ],
+          "scale": "sequential"
         },
         {
           "field": "fcc_street_flood_freq",
@@ -353,7 +354,8 @@
               "value": 4,
               "label": "Always (every time it rains)"
             }
-          ]
+          ],
+          "scale": "sequential"
         },
         {
           "field": "fcc_flood_cause_primary",
@@ -686,7 +688,8 @@
               "value": 5,
               "label": "High confidence"
             }
-          ]
+          ],
+          "scale": "diverging"
         },
         {
           "field": "nc_sewer_issue_comm_confidence",
@@ -715,7 +718,8 @@
               "value": 5,
               "label": "High confidence"
             }
-          ]
+          ],
+          "scale": "diverging"
         },
         {
           "field": "nc_sewer_info_source",
@@ -798,7 +802,8 @@
               "value": 5,
               "label": "Very satisfied"
             }
-          ]
+          ],
+          "scale": "diverging"
         },
         {
           "field": "iu_ingersoll_serves_household",
@@ -827,7 +832,8 @@
               "value": 5,
               "label": "Highly confident"
             }
-          ]
+          ],
+          "scale": "diverging"
         },
         {
           "field": "iu_ingersoll_serves_community",
@@ -856,7 +862,8 @@
               "value": 5,
               "label": "Highly confident"
             }
-          ]
+          ],
+          "scale": "diverging"
         },
         {
           "field": "iu_neighborhood_priority",
@@ -885,7 +892,8 @@
               "value": 5,
               "label": "Definitely yes"
             }
-          ]
+          ],
+          "scale": "diverging"
         },
         {
           "field": "nc_overflow_noti_pre_ingersoll",
@@ -1251,7 +1259,8 @@
               "value": 5,
               "label": "Extremely acceptable"
             }
-          ]
+          ],
+          "scale": "sequential"
         },
         {
           "field": "twt_tp_appearance",
@@ -1280,7 +1289,8 @@
               "value": 5,
               "label": "Extremely acceptable"
             }
-          ]
+          ],
+          "scale": "sequential"
         },
         {
           "field": "twt_tp_smell",
@@ -1309,7 +1319,8 @@
               "value": 5,
               "label": "Extremely acceptable"
             }
-          ]
+          ],
+          "scale": "sequential"
         },
         {
           "field": "twt_bw_spend",
@@ -1342,7 +1353,8 @@
               "value": 5,
               "label": "$0"
             }
-          ]
+          ],
+          "scale": "sequential"
         },
         {
           "field": "twt_tp_quality_seasonal",
@@ -1499,7 +1511,8 @@
               "value": 5,
               "label": "Never or almost never"
             }
-          ]
+          ],
+          "scale": "sequential"
         },
         {
           "field": "nc_tap_concern_contact",

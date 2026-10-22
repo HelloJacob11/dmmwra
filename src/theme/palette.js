@@ -27,10 +27,6 @@ export const CHART_CHROME = {
   surface: '#fcfcfb',
 }
 
-// Single-series question types each get one consistent hue so the chart
-// "kind" is recognizable at a glance without a legend.
-export const BAR_COLOR = SERIES[0] // blue — single-select "bar"/"binary" questions
-export const MULTISELECT_COLOR = SERIES[1] // aqua — "select all that apply"
 export const INDEX_COLOR = SERIES[4] // violet — constructed index distributions
 
 // Binary (Yes/No) questions: muted grey for "No", accent blue for "Yes".
@@ -40,6 +36,35 @@ export const BINARY_COLORS = ['#c3c2b7', SERIES[0]]
 // pair per the palette's diverging spec, with a neutral grey midpoint —
 // never red/green, which fails for red-green color vision deficiency.
 export const LIKERT_DIVERGING = ['#e34948', '#f1abaa', '#f0efec', '#9ec1ea', '#2a78d6']
+
+// Ordered scales with no neutral midpoint (frequency, amount, acceptability):
+// one hue, light -> dark along the option order. Picked evenly for n options.
+const ORDINAL_RAMP = ['#cde2fb', '#a9ccf5', '#6da7ec', '#3987e5', '#256abf', '#1c5cab', '#0d366b']
+
+export function ordinalColors(n) {
+  if (n <= 1) return [ORDINAL_RAMP[4]]
+  return Array.from({ length: n }, (_, i) =>
+    ORDINAL_RAMP.at(Math.round(1 + (i * (ORDINAL_RAMP.length - 2)) / (n - 1))))
+}
+
+// Unordered categories: distinct hues, plus two extras so the longest
+// select-all list (9 named options) never repeats a color.
+export const CATEGORICAL = [...SERIES, '#0f8b8d', '#9c6b30']
+
+// "Other" / "Don't know" carry no substantive answer, so they stay grey
+// instead of taking a hue.
+export const NON_ANSWER_COLOR = '#dcdbd4'
+const NON_ANSWER = /^(other|don't know|none)\b/i
+
+export function categoricalColors(labels) {
+  let next = 0
+  return labels.map((label) => {
+    if (NON_ANSWER.test(label)) return NON_ANSWER_COLOR
+    if (/^yes\b/i.test(label)) return BINARY_COLORS[1]
+    if (/^no\b/i.test(label)) return BINARY_COLORS[0]
+    return CATEGORICAL.at(next++ % CATEGORICAL.length)
+  })
+}
 
 // Sequential (one hue, light -> dark) for magnitude on the ZIP choropleth —
 // same blue ramp as BAR_COLOR, quantized to 5 steps.

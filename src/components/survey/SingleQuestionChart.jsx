@@ -3,21 +3,29 @@ import {
 } from 'recharts'
 import { singleQuestionStats } from '../../utils/filterRecords'
 import { pct, labelAxisWidth } from '../../utils/format'
-import { CHART_CHROME, BAR_COLOR, BINARY_COLORS, LIKERT_DIVERGING } from '../../theme/palette'
+import {
+  CHART_CHROME, BINARY_COLORS, LIKERT_DIVERGING, ordinalColors, categoricalColors,
+} from '../../theme/palette'
 import ChartCard from '../ChartCard'
 
-// Likert and binary questions get a fixed, meaningful color per option
-// (diverging for likert, grey/accent for binary). Plain "bar" questions are
-// nominal, so every bar shares one hue — color doesn't re-encode value.
-function colorsFor(chart, optionCount) {
-  if (chart === 'likert' && optionCount === LIKERT_DIVERGING.length) return LIKERT_DIVERGING
-  if (chart === 'binary' && optionCount === BINARY_COLORS.length) return BINARY_COLORS
-  return null
+// Every option gets a color that matches what kind of scale it sits on:
+// - likert, or `scale: "diverging"` (5 points around a neutral middle):
+//   red <-> grey <-> blue
+// - binary: grey "No", blue "Yes"
+// - `scale: "sequential"` (ordered, no neutral middle): light -> dark blue
+// - anything else is unordered: a distinct hue per option
+function colorsFor(question) {
+  const labels = question.options.map((o) => o.label)
+  const diverging = question.chart === 'likert' || question.scale === 'diverging'
+  if (diverging && labels.length === LIKERT_DIVERGING.length) return LIKERT_DIVERGING
+  if (question.chart === 'binary' && labels.length === BINARY_COLORS.length) return BINARY_COLORS
+  if (question.scale === 'sequential') return ordinalColors(labels.length)
+  return categoricalColors(labels)
 }
 
 export default function SingleQuestionChart({ question, records }) {
   const { data, denom } = singleQuestionStats(records, question.field, question.options)
-  const colors = colorsFor(question.chart, question.options.length)
+  const colors = colorsFor(question)
   const yWidth = labelAxisWidth(data.map((d) => d.label))
   const height = Math.max(130, data.length * 34 + 44)
 
@@ -50,8 +58,8 @@ export default function SingleQuestionChart({ question, records }) {
             formatter={(value, _name, item) => [`${pct(value)} (n=${item.payload.count})`, 'Share']}
             contentStyle={{ fontSize: 12, borderRadius: 8 }}
           />
-          <Bar dataKey="pct" name="Share" radius={[0, 4, 4, 0]} fill={colors ? undefined : BAR_COLOR}>
-            {colors && data.map((d, i) => <Cell key={d.label} fill={colors[i]} />)}
+          <Bar dataKey="pct" name="Share" radius={[0, 4, 4, 0]}>
+            {data.map((d, i) => <Cell key={d.label} fill={colors.at(i)} />)}
           </Bar>
         </BarChart>
       </ResponsiveContainer>
