@@ -640,3 +640,37 @@
     max-width: calc(100vw - 32px);
   }
 }
+
+/* ---- Overview article ---- */
+.overview-card {
+  gap: 14px;
+  padding: 24px 28px 28px;
+}
+
+.overview-card h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.overview-card p {
+  max-width: 75ch;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.overview-tab-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.overview-tab-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .overview-card {
+    padding: 18px 16px 20px;
+  }
+}

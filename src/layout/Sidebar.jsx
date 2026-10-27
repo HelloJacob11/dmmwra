@@ -12,6 +12,12 @@ export default function Sidebar() {
         </div>
       </div>
       <nav className="sidebar-nav">
+        <NavLink
+          to="/overview"
+          className={({ isActive }) => `sidebar-nav-link${isActive ? ' is-active' : ''}`}
+        >
+          Overview
+        </NavLink>
         {meta.sections.map((section) => (
           <NavLink
             key={section.id}
