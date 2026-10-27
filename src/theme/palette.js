@@ -29,15 +29,14 @@ export const CHART_CHROME = {
 
 export const INDEX_COLOR = '#4a4945' // dark gray — constructed index distributions
 
-// Binary (Yes/No) questions: muted grey for "No", accent blue for "Yes".
-export const BINARY_COLORS = ['#c3c2b7', SERIES[0]]
+const MUTED_GREY = '#c3c2b7'
 
 // 5-point Likert (Strongly disagree -> Strongly agree): diverging blue<->red
 // pair per the palette's diverging spec, with a neutral grey midpoint —
 // never red/green, which fails for red-green color vision deficiency.
 export const LIKERT_DIVERGING = ['#e34948', '#f1abaa', '#f0efec', '#9ec1ea', '#2a78d6']
 
-// Ordered scales with no neutral midpoint (frequency, amount, acceptability):
+// Ordered scales with no neutral midpoint (frequency, amount):
 // one hue, light -> dark along the option order. Picked evenly for n options.
 const ORDINAL_RAMP = ['#cde2fb', '#a9ccf5', '#6da7ec', '#3987e5', '#256abf', '#1c5cab', '#0d366b']
 
@@ -47,22 +46,28 @@ export function ordinalColors(n) {
     ORDINAL_RAMP.at(Math.round(1 + (i * (ORDINAL_RAMP.length - 2)) / (n - 1))))
 }
 
-// Unordered categories: distinct hues, plus two extras so the longest
-// select-all list (9 named options) never repeats a color.
-export const CATEGORICAL = [...SERIES, '#0f8b8d', '#9c6b30']
+// Yes / No (/ Don't know) answers: blue Yes, red No, grey Don't know — the
+// same ends as the Likert scale. Returns null if any option isn't one of these.
+const YES_NO = { yes: LIKERT_DIVERGING.at(-1), no: LIKERT_DIVERGING[0], "don't know": MUTED_GREY }
 
-// "Other" / "Don't know" carry no substantive answer, so they stay grey
-// instead of taking a hue.
-export const NON_ANSWER_COLOR = '#dcdbd4'
-const NON_ANSWER = /^(other|don't know|none)\b/i
+export function yesNoColors(labels) {
+  const keys = labels.map((label) => label.toLowerCase().match(/^(yes|no|don't know)\b/)?.[1])
+  return keys.every(Boolean) ? keys.map((k) => YES_NO[k]) : null
+}
 
-export function categoricalColors(labels) {
-  let next = 0
-  return labels.map((label) => {
-    if (NON_ANSWER.test(label)) return NON_ANSWER_COLOR
-    if (/^yes\b/i.test(label)) return BINARY_COLORS[1]
-    if (/^no\b/i.test(label)) return BINARY_COLORS[0]
-    return CATEGORICAL.at(next++ % CATEGORICAL.length)
+// Unordered choices: blue for the most-chosen option fading to grey for the
+// least, so color repeats the ranking. Equal values share a color.
+const RANK_TOP = [42, 120, 214] // LIKERT_DIVERGING blue
+const RANK_BOTTOM = [195, 194, 183] // MUTED_GREY
+
+export function rankColors(values) {
+  const sorted = [...values].sort((a, b) => b - a)
+  const steps = Math.max(1, new Set(sorted).size - 1)
+  const distinct = [...new Set(sorted)]
+  return values.map((v) => {
+    const t = distinct.indexOf(v) / steps
+    const rgb = RANK_TOP.map((c, i) => Math.round(c + (RANK_BOTTOM.at(i) - c) * t))
+    return `rgb(${rgb.join(', ')})`
   })
 }
 
@@ -70,6 +75,6 @@ export function categoricalColors(labels) {
 // same blue ramp as BAR_COLOR, quantized to 5 steps.
 export const MAP_SEQUENTIAL = ['#cde2fb', '#86b6ef', '#3987e5', '#1c5cab', '#0d366b']
 
-// Suppressed / no-data ZIPs share the same muted grey used for the binary
-// "No" bar — grey means "no reliable signal," not "zero."
-export const MAP_SUPPRESSED = BINARY_COLORS[0]
+// Suppressed / no-data ZIPs are muted grey — grey means "no reliable
+// signal," not "zero."
+export const MAP_SUPPRESSED = MUTED_GREY

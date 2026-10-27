@@ -3,17 +3,15 @@ import {
 } from 'recharts'
 import { multiselectStats } from '../../utils/filterRecords'
 import { pct, labelAxisWidth } from '../../utils/format'
-import { CHART_CHROME, categoricalColors } from '../../theme/palette'
+import { CHART_CHROME, rankColors } from '../../theme/palette'
 import ChartCard from '../ChartCard'
 
 // "Select all that apply" — each member is an independent 0/1 column, so
 // bars are not mutually exclusive and won't sum to 100%.
 export default function MultiselectQuestionChart({ question, records }) {
   const data = multiselectStats(records, question.members)
-  // Colors follow the option, not its rank, so an option keeps its color
-  // when filters reorder the bars.
-  const memberLabels = question.members.map((m) => m.label)
-  const colorByLabel = new Map(memberLabels.map((label, i) => [label, categoricalColors(memberLabels).at(i)]))
+  // Most-selected option is blue, fading to grey for the least selected.
+  const colors = rankColors(data.map((d) => d.pct))
   const denom = data.reduce((max, d) => Math.max(max, d.denom), 0)
   const yWidth = labelAxisWidth(data.map((d) => d.label))
   const height = Math.max(130, data.length * 30 + 44)
@@ -48,7 +46,7 @@ export default function MultiselectQuestionChart({ question, records }) {
             contentStyle={{ fontSize: 12, borderRadius: 8 }}
           />
           <Bar dataKey="pct" name="Selected" radius={[0, 4, 4, 0]}>
-            {data.map((d) => <Cell key={d.label} fill={colorByLabel.get(d.label)} />)}
+            {data.map((d, i) => <Cell key={d.label} fill={colors.at(i)} />)}
           </Bar>
         </BarChart>
       </ResponsiveContainer>

@@ -4,28 +4,30 @@ import {
 import { singleQuestionStats } from '../../utils/filterRecords'
 import { pct, labelAxisWidth } from '../../utils/format'
 import {
-  CHART_CHROME, BINARY_COLORS, LIKERT_DIVERGING, ordinalColors, categoricalColors,
+  CHART_CHROME, LIKERT_DIVERGING, ordinalColors, yesNoColors, rankColors,
 } from '../../theme/palette'
 import ChartCard from '../ChartCard'
 
 // Every option gets a color that matches what kind of scale it sits on:
 // - likert, or `scale: "diverging"` (5 points around a neutral middle):
 //   red <-> grey <-> blue
-// - binary: grey "No", blue "Yes"
+// - Yes / No (/ Don't know): blue Yes, red No, grey Don't know
 // - `scale: "sequential"` (ordered, no neutral middle): light -> dark blue
-// - anything else is unordered: a distinct hue per option
-function colorsFor(question) {
+// - anything else is unordered: blue for the most-chosen option -> grey for
+//   the least, recomputed for the current filters
+function colorsFor(question, data) {
   const labels = question.options.map((o) => o.label)
   const diverging = question.chart === 'likert' || question.scale === 'diverging'
   if (diverging && labels.length === LIKERT_DIVERGING.length) return LIKERT_DIVERGING
-  if (question.chart === 'binary' && labels.length === BINARY_COLORS.length) return BINARY_COLORS
+  const yesNo = yesNoColors(labels)
+  if (yesNo) return yesNo
   if (question.scale === 'sequential') return ordinalColors(labels.length)
-  return categoricalColors(labels)
+  return rankColors(data.map((d) => d.pct))
 }
 
 export default function SingleQuestionChart({ question, records }) {
   const { data, denom } = singleQuestionStats(records, question.field, question.options)
-  const colors = colorsFor(question)
+  const colors = colorsFor(question, data)
   const yWidth = labelAxisWidth(data.map((d) => d.label))
   const height = Math.max(130, data.length * 34 + 44)
 
