@@ -85,6 +85,23 @@
   border-top: 1px solid var(--border);
 }
 
+.sidebar-logo {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-top: 14px;
+}
+
+/* The logo is black on transparent, so give it a white plate in dark mode. */
+@media (prefers-color-scheme: dark) {
+  .sidebar-logo {
+    background: #fff;
+    padding: 8px;
+    border-radius: 6px;
+  }
+}
+
 /* ---- Main column ---- */
 .app-main {
   flex: 1;

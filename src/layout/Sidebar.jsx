@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import meta from '../meta.json'
+import stanfordLogo from '../assets/stanford-cee-logo.png'
 
 export default function Sidebar() {
   return (
@@ -38,6 +39,11 @@ export default function Sidebar() {
         {meta.n_records.toLocaleString()} residents surveyed.
         <br />
         Segment using the filters above.
+        <img
+          className="sidebar-logo"
+          src={stanfordLogo}
+          alt="Stanford School of Engineering & Doerr School of Sustainability, Civil & Environmental Engineering"
+        />
       </div>
     </aside>
   )
