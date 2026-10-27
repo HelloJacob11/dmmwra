@@ -36,9 +36,6 @@ export default function Sidebar() {
         </NavLink>
       </nav>
       <div className="sidebar-footer">
-        {meta.n_records.toLocaleString()} residents surveyed.
-        <br />
-        Segment using the filters above.
         <img
           className="sidebar-logo"
           src={stanfordLogo}
