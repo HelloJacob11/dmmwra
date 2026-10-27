@@ -27,7 +27,7 @@ export const CHART_CHROME = {
   surface: '#fcfcfb',
 }
 
-export const INDEX_COLOR = SERIES[4] // violet — constructed index distributions
+export const INDEX_COLOR = '#4a4945' // dark gray — constructed index distributions
 
 // Binary (Yes/No) questions: muted grey for "No", accent blue for "Yes".
 export const BINARY_COLORS = ['#c3c2b7', SERIES[0]]
