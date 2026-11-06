@@ -6,11 +6,8 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <span className="sidebar-brand-mark" aria-hidden="true">DM</span>
-        <div>
-          <div className="sidebar-brand-title">Resident Survey Results</div>
-          <div className="sidebar-brand-subtitle">City of Des Moines</div>
-        </div>
+        <div className="sidebar-brand-title">Resident Survey Results</div>
+        <div className="sidebar-brand-subtitle">City of Des Moines</div>
       </div>
       <nav className="sidebar-nav">
         <NavLink
