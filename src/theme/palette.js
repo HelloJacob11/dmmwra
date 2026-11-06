@@ -55,21 +55,10 @@ export function yesNoColors(labels) {
   return keys.every(Boolean) ? keys.map((k) => YES_NO[k]) : null
 }
 
-// Unordered choices: blue for the most-chosen option fading to grey for the
-// least, so color repeats the ranking. Equal values share a color.
-const RANK_TOP = [42, 120, 214] // LIKERT_DIVERGING blue
-const RANK_BOTTOM = [195, 194, 183] // MUTED_GREY
-
-export function rankColors(values) {
-  const sorted = [...values].sort((a, b) => b - a)
-  const steps = Math.max(1, new Set(sorted).size - 1)
-  const distinct = [...new Set(sorted)]
-  return values.map((v) => {
-    const t = distinct.indexOf(v) / steps
-    const rgb = RANK_TOP.map((c, i) => Math.round(c + (RANK_BOTTOM.at(i) - c) * t))
-    return `rgb(${rgb.join(', ')})`
-  })
-}
+// Unordered choices (multiple choice, select-all-that-apply): one neutral grey
+// for every option — bar length alone carries the comparison. Darker than
+// MUTED_GREY so it isn't read as "no data", and readable in both themes.
+export const UNORDERED_GREY = '#898781'
 
 // Sequential (one hue, light -> dark) for magnitude on the ZIP choropleth —
 // same blue ramp as BAR_COLOR, quantized to 5 steps.

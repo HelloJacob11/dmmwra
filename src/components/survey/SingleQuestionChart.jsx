@@ -4,7 +4,7 @@ import {
 import { singleQuestionStats } from '../../utils/filterRecords'
 import { pct, labelAxisWidth } from '../../utils/format'
 import {
-  CHART_CHROME, LIKERT_DIVERGING, ordinalColors, yesNoColors, rankColors,
+  CHART_CHROME, LIKERT_DIVERGING, ordinalColors, yesNoColors, UNORDERED_GREY,
 } from '../../theme/palette'
 import ChartCard from '../ChartCard'
 
@@ -13,21 +13,20 @@ import ChartCard from '../ChartCard'
 //   red <-> grey <-> blue
 // - Yes / No (/ Don't know): blue Yes, red No, grey Don't know
 // - `scale: "sequential"` (ordered, no neutral middle): light -> dark blue
-// - anything else is unordered: blue for the most-chosen option -> grey for
-//   the least, recomputed for the current filters
-function colorsFor(question, data) {
+// - anything else is unordered: the same grey for every option
+function colorsFor(question) {
   const labels = question.options.map((o) => o.label)
   const diverging = question.chart === 'likert' || question.scale === 'diverging'
   if (diverging && labels.length === LIKERT_DIVERGING.length) return LIKERT_DIVERGING
   const yesNo = yesNoColors(labels)
   if (yesNo) return yesNo
   if (question.scale === 'sequential') return ordinalColors(labels.length)
-  return rankColors(data.map((d) => d.pct))
+  return labels.map(() => UNORDERED_GREY)
 }
 
 export default function SingleQuestionChart({ question, records }) {
   const { data, denom } = singleQuestionStats(records, question.field, question.options)
-  const colors = colorsFor(question, data)
+  const colors = colorsFor(question)
   const yWidth = labelAxisWidth(data.map((d) => d.label))
   const height = Math.max(130, data.length * 34 + 44)
 
