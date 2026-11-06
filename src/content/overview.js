@@ -47,7 +47,7 @@ export const OVERVIEW = {
   ],
   partners: {
     heading: 'Partners & Stakeholders',
-    intro: 'This work was made possible by the community organizations and institutions that helped us reach Des Moines residents.',
+    intro: 'Thank you to the organizations that helped us reach Des Moines residents.',
     logos: [
       // hostedSurveys → also named on the Community Work tab
       { name: 'Children & Family Urban Movement', src: cfumLogo, hostedSurveys: true },
