@@ -1,3 +1,8 @@
+import cfumLogo from '../assets/partners/cfum.png'
+import corinthianLogo from '../assets/partners/corinthian-baptist.png'
+import eaglesLogo from '../assets/partners/m-eagles.png'
+import iowaStateLogo from '../assets/partners/iowa-state.png'
+
 // Text for the Overview tab. Edit freely — the page renders whatever is here.
 //
 // Each paragraph is a list of pieces:
@@ -40,4 +45,16 @@ export const OVERVIEW = {
       ],
     },
   ],
+  partners: {
+    heading: 'Partners & Stakeholders',
+    intro: 'This work was made possible by the community organizations and institutions that helped us reach Des Moines residents.',
+    logos: [
+      // hostedSurveys → also named on the Community Work tab
+      { name: 'Children & Family Urban Movement', src: cfumLogo, hostedSurveys: true },
+      { name: 'Corinthian Baptist Church', src: corinthianLogo, hostedSurveys: true },
+      // TODO: replace with the school's full name (used as alt text, tooltip, and on Community Work)
+      { name: 'Eagles school partner', src: eaglesLogo, hostedSurveys: true },
+      { name: 'Iowa State University', src: iowaStateLogo },
+    ],
+  },
 }

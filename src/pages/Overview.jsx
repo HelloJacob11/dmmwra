@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { OVERVIEW } from '../content/overview'
 
 function Piece({ piece }) {
@@ -10,6 +11,13 @@ function Piece({ piece }) {
 // Introduces the study and explains the dashboard. Text lives in
 // src/content/overview.js; this page only lays it out.
 export default function Overview() {
+  const { hash } = useLocation()
+
+  // React Router doesn't scroll to #anchors, so do it here (e.g. /overview#partners).
+  useEffect(() => {
+    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' })
+  }, [hash])
+
   return (
     <>
       <header className="page-header">
@@ -29,6 +37,18 @@ export default function Overview() {
           ))}
         </section>
       ))}
+
+      <section id="partners" className="chart-card overview-card">
+        <h2>{OVERVIEW.partners.heading}</h2>
+        <p>{OVERVIEW.partners.intro}</p>
+        <ul className="partner-logos">
+          {OVERVIEW.partners.logos.map((logo) => (
+            <li key={logo.name} className="partner-logo" title={logo.name}>
+              <img src={logo.src} alt={logo.name} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   )
 }

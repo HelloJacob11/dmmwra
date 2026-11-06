@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { OVERVIEW } from '../content/overview'
 import photo1 from '../assets/community/community-1.jpg'
 import photo2 from '../assets/community/community-2.jpg'
 import photo3 from '../assets/community/community-3.jpg'
@@ -16,6 +18,9 @@ const PHOTOS = [
   { src: photo4, alt: 'Residents in conversation around a table', layout: 'wide' },
   { src: photo3, alt: 'Two members of the survey team seated at a table' },
 ]
+
+const HOSTS = OVERVIEW.partners.logos.filter((p) => p.hostedSurveys).map((p) => p.name)
+const HOSTS_TEXT = new Intl.ListFormat('en', { type: 'conjunction' }).format(HOSTS)
 
 // Photo collage from survey outreach. Clicking a photo opens it full size;
 // arrow keys step through, Escape closes.
@@ -52,6 +57,10 @@ export default function CommunityWork() {
         <p>
           Moments from handing out surveys and talking with Des Moines residents about
           flooding, sewers and tap water. Click a photo to see it larger.
+        </p>
+        <p>
+          Survey days were held with {HOSTS_TEXT}.{' '}
+          <Link to="/overview#partners" className="overview-tab-link">See all partners</Link>
         </p>
       </div>
 
