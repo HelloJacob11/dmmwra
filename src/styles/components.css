@@ -316,6 +316,11 @@
   gap: 4px;
 }
 
+/* Index maps sit two per row; an odd one out (or a lone map) takes the full width. */
+.index-maps > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .index-chart-plot {
   height: 180px;
 }

@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { Map as MapLibreMap, Popup as MapLibrePopup } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { aggregateByZip } from '../../utils/filterRecords'
+import { aggregateByZip, indexStats } from '../../utils/filterRecords'
 import { MAP_SEQUENTIAL, MAP_SUPPRESSED } from '../../theme/palette'
 import ChartCard from '../ChartCard'
+import InfoPopover from '../InfoPopover'
 import * as maplibregl from 'maplibre-gl'
 
 const SUPPRESS_THRESHOLD = 5
@@ -36,8 +37,9 @@ function paintFeatures(geo, stats) {
 }
 
 // Choropleth of a constructed index averaged by respondent ZIP code. Reused
-// across sections by pointing it at a different index field via `metric`.
-export default function FloodMap({ rows, metric, label }) {
+// across sections by pointing it at a different index definition.
+export default function FloodMap({ rows, indexDef }) {
+  const metric = indexDef.field
   const containerRef = useRef(null)
   const mapRef = useRef(null)
   const geoRef = useRef(null)
@@ -122,11 +124,22 @@ export default function FloodMap({ rows, metric, label }) {
   const statValues = Object.values(stats)
   const zipCount = statValues.filter((s) => !s.suppressed).length
   const respondentCount = statValues.reduce((sum, s) => sum + s.n, 0)
+  const { mean, denom } = indexStats(rows, metric)
 
   return (
     <ChartCard
-      title={label}
-      subtitle="ZIP-level average, current filter selection"
+      title={`${indexDef.label} by ZIP`}
+      titleExtra={indexDef.items?.length > 0 && (
+        <InfoPopover label={`Questions used in the ${indexDef.label}`}>
+          <p className="info-popover-heading">Survey questions in this index</p>
+          <ul>
+            {indexDef.items.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+          {indexDef.items_note && <p className="info-popover-note">{indexDef.items_note}</p>}
+        </InfoPopover>
+      )}
+      description={indexDef.description}
+      subtitle={`ZIP-level average, current filter selection · overall mean ${denom ? mean.toFixed(2) : '—'} (n = ${denom.toLocaleString()})`}
       footnote={`Based on ${respondentCount.toLocaleString()} respondents across ${zipCount} ZIPs. Grey = fewer than ${SUPPRESS_THRESHOLD} responses.`}
     >
       <div ref={containerRef} style={{ height: 400, width: '100%', borderRadius: 8, overflow: 'hidden' }} />

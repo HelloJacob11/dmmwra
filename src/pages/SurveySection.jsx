@@ -2,26 +2,15 @@ import { useFilters } from '../context/FilterContext'
 import { applyFilters } from '../utils/filterRecords'
 import data from '../data.json'
 import SectionQuestion from '../components/survey/SectionQuestion'
-import IndexChart from '../components/survey/IndexChart'
 import FloodMap from '../components/map/FloodMap'
 
-// Sections that get a ZIP choropleth alongside one of their indices.
-const MAP_METRICS = {
-  flooding: 'flood_exposure_index',
-  tapwater: 'water_trust_sensory',
-}
-
-// Generic renderer for one meta.json section: header + its index/indices +
+// Generic renderer for one meta.json section: header + a ZIP map per index +
 // every question, dispatched by kind. A new section or question in
 // meta.json appears here automatically — nothing else needs to change.
 export default function SurveySection({ section }) {
   const { filters, activeCount } = useFilters()
   const records = applyFilters(data, filters)
   const indices = section.indices ?? (section.index ? [section.index] : [])
-
-  const mapMetric = MAP_METRICS[section.id]
-  const mappedIndex = mapMetric ? indices.find((i) => i.field === mapMetric) : null
-  const otherIndices = mappedIndex ? indices.filter((i) => i !== mappedIndex) : indices
 
   return (
     <>
@@ -35,17 +24,10 @@ export default function SurveySection({ section }) {
         </p>
       </div>
 
-      {mappedIndex && (
-        <div className="grid grid-2">
-          <IndexChart indexDef={mappedIndex} records={records} fill />
-          <FloodMap rows={records} metric={mappedIndex.field} label={`${mappedIndex.label} by ZIP`} />
-        </div>
-      )}
-
-      {otherIndices.length > 0 && (
-        <div className="grid grid-3">
-          {otherIndices.map((indexDef) => (
-            <IndexChart key={indexDef.field} indexDef={indexDef} records={records} />
+      {indices.length > 0 && (
+        <div className="grid grid-2 index-maps">
+          {indices.map((indexDef) => (
+            <FloodMap key={indexDef.field} rows={records} indexDef={indexDef} />
           ))}
         </div>
       )}
