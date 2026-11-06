@@ -316,8 +316,9 @@
   gap: 4px;
 }
 
-/* Index maps sit two per row; an odd one out (or a lone map) takes the full width. */
-.index-maps > :last-child:nth-child(odd) {
+/* Index maps sit two per row (three when there are exactly three); a lone
+   map takes the full width. */
+.index-maps.grid-2 > :last-child:nth-child(odd) {
   grid-column: 1 / -1;
 }
 

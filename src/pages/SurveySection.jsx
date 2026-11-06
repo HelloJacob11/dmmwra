@@ -25,7 +25,7 @@ export default function SurveySection({ section }) {
       </div>
 
       {indices.length > 0 && (
-        <div className="grid grid-2 index-maps">
+        <div className={`grid ${indices.length === 3 ? 'grid-3' : 'grid-2'} index-maps`}>
           {indices.map((indexDef) => (
             <FloodMap key={indexDef.field} rows={records} indexDef={indexDef} />
           ))}
