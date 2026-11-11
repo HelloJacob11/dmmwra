@@ -40,7 +40,11 @@ export default function Overview() {
 
       <section id="partners" className="chart-card overview-card">
         <h2>{OVERVIEW.partners.heading}</h2>
-        <p>{OVERVIEW.partners.intro}</p>
+        {OVERVIEW.partners.paragraphs.map((paragraph, i) => (
+          <p key={i}>
+            {paragraph.map((piece, j) => <Piece key={j} piece={piece} />)}
+          </p>
+        ))}
         <ul className="partner-logos">
           {OVERVIEW.partners.logos.map((logo) => (
             <li key={logo.name} className="partner-logo" title={logo.name}>
