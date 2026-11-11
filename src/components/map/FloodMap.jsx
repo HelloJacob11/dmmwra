@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Map as MapLibreMap, Popup as MapLibrePopup } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { aggregateByZip, indexStats } from '../../utils/filterRecords'
+import { aggregateByZip } from '../../utils/filterRecords'
 import { MAP_SEQUENTIAL, MAP_SUPPRESSED } from '../../theme/palette'
 import ChartCard from '../ChartCard'
 import InfoPopover from '../InfoPopover'
@@ -33,7 +33,6 @@ function paintFeatures(geo, stats) {
     feature.properties.n = s ? s.n : 0
     feature.properties.value = shown ? s.value : null
   })
-  return { min, max }
 }
 
 // Choropleth of a constructed index averaged by respondent ZIP code. Reused
@@ -44,7 +43,6 @@ export default function FloodMap({ rows, indexDef }) {
   const mapRef = useRef(null)
   const geoRef = useRef(null)
   const popupRef = useRef(null)
-  const [range, setRange] = useState(null)
 
   useEffect(() => {
     const map = new MapLibreMap({
@@ -69,7 +67,7 @@ export default function FloodMap({ rows, indexDef }) {
     map.on('load', async () => {
       const geo = await fetch(GEOJSON_URL).then((r) => r.json())
       geoRef.current = geo
-      setRange(paintFeatures(geo, aggregateByZip(rows, metric, SUPPRESS_THRESHOLD)))
+      paintFeatures(geo, aggregateByZip(rows, metric, SUPPRESS_THRESHOLD))
 
       map.addSource('zips', { type: 'geojson', data: geo })
       map.addLayer({
@@ -116,7 +114,7 @@ export default function FloodMap({ rows, indexDef }) {
     const map = mapRef.current
     const geo = geoRef.current
     if (!map || !geo || !map.getSource('zips')) return
-    setRange(paintFeatures(geo, aggregateByZip(rows, metric, SUPPRESS_THRESHOLD)))
+    paintFeatures(geo, aggregateByZip(rows, metric, SUPPRESS_THRESHOLD))
     map.getSource('zips').setData(geo)
   }, [rows, metric])
 
@@ -124,7 +122,6 @@ export default function FloodMap({ rows, indexDef }) {
   const statValues = Object.values(stats)
   const zipCount = statValues.filter((s) => !s.suppressed).length
   const respondentCount = statValues.reduce((sum, s) => sum + s.n, 0)
-  const { mean, denom } = indexStats(rows, metric)
 
   return (
     <ChartCard
@@ -139,22 +136,22 @@ export default function FloodMap({ rows, indexDef }) {
         </InfoPopover>
       )}
       description={indexDef.description}
-      subtitle={`ZIP-level average, current filter selection · overall mean ${denom ? mean.toFixed(2) : '—'} (n = ${denom.toLocaleString()})`}
+      subtitle="ZIP-level average, current filter selection"
       footnote={`Based on ${respondentCount.toLocaleString()} respondents across ${zipCount} ZIPs. Grey = fewer than ${SUPPRESS_THRESHOLD} responses.`}
     >
       <div ref={containerRef} style={{ height: 400, width: '100%', borderRadius: 8, overflow: 'hidden' }} />
       <div className="legend" style={{ marginTop: 10 }}>
         <span className="legend-item">
           <span className="legend-swatch" style={{ background: MAP_SEQUENTIAL[0] }} />
-          {range?.min != null ? `Low (${range.min.toFixed(1)})` : 'Low'}
+          Low
         </span>
         <span className="legend-item">
           <span className="legend-swatch" style={{ background: MAP_SEQUENTIAL[MAP_SEQUENTIAL.length - 1] }} />
-          {range?.max != null ? `High (${range.max.toFixed(1)})` : 'High'}
+          High
         </span>
         <span className="legend-item">
           <span className="legend-swatch" style={{ background: MAP_SUPPRESSED }} />
-          {`n < ${SUPPRESS_THRESHOLD}`}
+          Too few responses
         </span>
       </div>
     </ChartCard>
