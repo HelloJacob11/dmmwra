@@ -63,10 +63,10 @@ export const OVERVIEW = {
       ],
     ],
     logos: [
-      { name: 'Children & Family Urban Movement', src: cfumLogo },
-      { name: 'Corinthian Baptist Church', src: corinthianLogo },
-      { name: 'Moulton Elementary School', src: moultonLogo },
       { name: 'Iowa State University', src: iowaStateLogo },
+      { name: 'Corinthian Baptist Church', src: corinthianLogo },
+      { name: 'Children & Family Urban Movement', src: cfumLogo },
+      { name: 'Moulton Elementary School', src: moultonLogo },
     ],
   },
 }
